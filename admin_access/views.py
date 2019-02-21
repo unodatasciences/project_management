@@ -8,7 +8,8 @@ from admin_access.models import Project
 class ProjectForm(ModelForm):
     class Meta:
         model = Project
-        fields = ['name', 'advisor', 'email', 'stage']
+        fields = ['name', 'permission', 'budget', 'stage']
+
 
 @login_required
 def aa_list(request, template_name='admin_access:aa_list'):
