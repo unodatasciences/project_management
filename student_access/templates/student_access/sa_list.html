@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2><a href="{% url 'student_access:sa_list' %}">Student Access</a></h2>
+
+<ul>
+    {% for project in object_list %}
+    <li>{{ project.name }}  ({{ project.advisor }} )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

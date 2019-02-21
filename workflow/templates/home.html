@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{% url 'student_access:sa_list' %}">Student Access</a><br>
+<a href="{% url 'professor_access:pa_list' %}">Professor Access</a><br>
+<a href="{% url 'admin_access:aa_list' %}">Admin Access</a><br>
+
+{% endblock %}
