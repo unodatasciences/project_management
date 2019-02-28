@@ -5,6 +5,6 @@ from . import views
 app_name = 'admin_access'
 
 urlpatterns = [
-  path('', views.aa_list, name='aa_list'),
+  path('', views.Project, name='aa_list'),
 
 ]
