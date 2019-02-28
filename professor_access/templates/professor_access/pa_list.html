@@ -6,7 +6,7 @@
 
 <ul>
     {% for project in object_list %}
-    <li>{{ project.name }}  ({{ project.advisor }} )
+    <li>{{ project .name }}  ({{ project .advisor }} ) ({{ project .email }} ) ({{ project .stage }} )
     </li>
     {% endfor %}
 </ul>

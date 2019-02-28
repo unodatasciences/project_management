@@ -1,3 +1,4 @@
 from django.contrib import admin
+from professor_access.models import Professor_Project
 
-# Register your models here.
+admin.site.register(Professor_Project)
