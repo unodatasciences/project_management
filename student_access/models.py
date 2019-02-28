@@ -1,15 +1,19 @@
 from django.db import models
-from django.utils import timezone
 from django.urls import reverse
-from django.conf import settings
-from django.contrib.auth.models import User
+
+
+#class Project(models.Model):
+#    name = models.CharField(max_length=200)
+#    pages = models.IntegerField()
+
+#    def __str__(self):
+#        return self.name
 
 class Project(models.Model):
     name = models.CharField(max_length=50)
-    advisor = models.CharField(max_length=200)
-    email = models.EmailField(max_length=200)
+    permission = models.CharField (max_length=50)
+    budget = models.IntegerField(blank=False, null=False)
     stage = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.name
-
+        return str(self.name)
