@@ -29,6 +29,7 @@
         <th>Advisor</th>
         <th>Email</th>
         <th>Stage</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -39,12 +40,15 @@
         <td>{{ project.advisor }}</td>
         <td>{{ project.email }}</td>
         <td>{{ project.stage }}</td>
+                <td><a href="{% url 'professor_access:project_edit' project.id %}">edit</a>
+        <a href="{% url 'professor_access:project_delete' project.id %}">delete</a></td>
     </tr>
     <!--<li>{{ project.name }}  ({{ project.advisor }} ) ({{ project.email }} ) ({{ project.stage }} )
     </li>-->
     {% endfor %}
     </tbody>
 </table>
+<a href="{% url 'professor_access:project_new' %}">New</a>
 </body>
 
 {% endblock %}

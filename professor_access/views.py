@@ -16,3 +16,24 @@ def professor_list(request, template_name='professor_access/pa_list.html'):
     data['object_list'] = project
     return render(request, template_name, data)
 
+def professor_create(request, template_name='professor_access/project_form.html'):
+    form = professorForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('professor_access:pa_list')
+    return render(request, template_name, {'form':form})
+
+def professor_update(request, pk, template_name='professor_access/project_form.html'):
+    project= get_object_or_404(Project, pk=pk)
+    form = professorForm(request.POST or None, instance= project)
+    if form.is_valid():
+        form.save()
+        return redirect('professor_access:pa_list')
+    return render(request, template_name, {'form':form})
+
+def professor_delete(request, pk, template_name='professor_access/project_confirm_delete.html'):
+    project= get_object_or_404(Project, pk=pk)
+    if request.method=='POST':
+        project.delete()
+        return redirect('professor_access:pa_list')
+    return render(request, template_name, {'object':project})
