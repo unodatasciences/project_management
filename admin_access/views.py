@@ -12,7 +12,7 @@ class ProjectForm(ModelForm):
 
 
 @login_required
-def admin_list(request, template_name='admin_access:aa_list'):
+def admin_list(request, template_name='admin_access/aa_list.html'):
     if request.user.is_superuser:
         project = Project.objects.all()
     else:
@@ -20,3 +20,5 @@ def admin_list(request, template_name='admin_access:aa_list'):
     data = {}
     data['object_list'] = project
     return render(request, template_name, data)
+
+

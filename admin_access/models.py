@@ -7,7 +7,7 @@ class Project(models.Model):
     project_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     permission = models.CharField (max_length=50)
-    budget = models.IntegerField(blank=False, null=False)
+    budget = models.CharField(max_length=200)
     stage = models.CharField(max_length=50)
 
     def __str__(self):
