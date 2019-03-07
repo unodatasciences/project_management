@@ -13,3 +13,6 @@ class Project(models.Model):
     def __str__(self):
         return str(self.project_id)
 
+    def get_absolute_url(self):
+        return reverse('admin_access:project_edit', kwargs={'pk': self.pk})
+

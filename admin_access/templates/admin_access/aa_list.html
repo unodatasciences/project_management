@@ -28,23 +28,27 @@
         <th>Permission</th>
         <th>Budget</th>
         <th>Stage</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
     {% for project in object_list %}
 
     <tr>
-        <td>{{ project.project_number }}</td>
+        <td>{{ project.project_id }}</td>
         <td>{{ project.name }}</td>
         <td>{{ project.permission }}</td>
         <td>{{ project.budget }}</td>
         <td>{{ project.stage }}</td>
+        <td><a href="{% url 'admin_access:project_edit' project.id %}">edit</a>
+        <a href="{% url 'admin_access:project_delete' project.id %}">delete</a></td>
     </tr>
     <!--<li>{{ project.name }}  ({{ project.advisor }} ) ({{ project.email }} ) ({{ project.stage }} )
     </li>-->
     {% endfor %}
     </tbody>
 </table>
+<a href="{% url 'admin_access:project_new' %}">New</a>
 </body>
 
 {% endblock %}
