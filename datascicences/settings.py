@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'workflow',
     'student_access',
     'professor_access',
-    'admin_access'
+    'admin_access',
+
 
 ]
 
@@ -124,5 +125,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_URL = '/admin/login/'
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+
 
 
