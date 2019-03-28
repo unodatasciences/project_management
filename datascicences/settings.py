@@ -127,7 +127,7 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/admin/login/'
 
 LOGIN_REDIRECT_URL = 'dashboard'
-LOGIN_URL = 'login'
+LOGIN_URL = 'student_access:login'
 LOGOUT_URL = 'logout'
 
 

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2><a href="{% url 'professor_access:pa_list' %}">Projects Details</a></h2>
+
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+</form>
+
+{% endblock %}
+
+

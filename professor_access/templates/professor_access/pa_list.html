@@ -26,6 +26,7 @@
     <thead>
     <tr class="bg-info">
         <th>Name</th>
+        <th>Detail</th>
         <th>Advisor</th>
         <th>Email</th>
         <th>Stage</th>
@@ -36,12 +37,14 @@
     {% for project in object_list %}
 
     <tr>
-        <td>{{ project.name }}</td>
+        <td>{{ project.name}}</td>
+        <td><a href="{% url 'professor_access:project_edit1' project.id %}">Click</a></td>
         <td>{{ project.advisor }}</td>
         <td>{{ project.email }}</td>
         <td>{{ project.stage }}</td>
-                <td><a href="{% url 'professor_access:project_edit' project.id %}">edit</a>
-        <a href="{% url 'professor_access:project_delete' project.id %}">delete</a></td>
+        <td>
+        <a href="{% url 'professor_access:project_edit' project.id %}">Edit</a>
+        <a href="{% url 'professor_access:project_delete' project.id %}">Delete</a></td>
     </tr>
     <!--<li>{{ project.name }}  ({{ project.advisor }} ) ({{ project.email }} ) ({{ project.stage }} )
     </li>-->
