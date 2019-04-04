@@ -51,6 +51,7 @@ def professor_update1(request, pk, template_name='professor_access/project_form_
     #   get.save()
     #   return redirect('professor_access:pa_list')
     #return render (get, template_name, {'get': get})
+
 def professor_delete(request, pk, template_name='professor_access/project_confirm_delete.html'):
     project= get_object_or_404(Project, pk=pk)
     if request.method=='POST':
@@ -74,5 +75,5 @@ def post_detail(request, year, month, day, post):
                                    publish__month=month,
                                    publish__day=day)
     return render(request,
-                  'professor_access/project_form_copy.html',
+                  'professor_access/detail.html',
                   {'post': post})
