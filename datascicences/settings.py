@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'student_access',
     'professor_access',
     'admin_access',
+    #'blog.apps.BlogConfig'
+    #'blog'
 
 
 ]

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+<h2><a href="{% url 'professor_access:pa_list' %}">Projects Details</a></h2>
+{% block content %}
+{% block title %}{{ post.title }}{% endblock %}
+
+  <h1>{{ post.title }}</h1> 
+  <p class="date"> 
+    Published {{ post.publish }} by {{ post.author }} 
+  </p> 
+  {{ post.body|linebreaks }}
+
+{% endblock %}
+
+  <!--{% for post in posts %}
+    <h2>
+      <a href="{{ post.get_absolute_url }}">
+        {{ post.title }}
+      </a>
+    </h2>
+    <p class="date">
+      Published {{ post.publish }} by {{ post.author }}
+    </p>
+    {{ post.body|truncatewords:30|linebreaks }}
+  {% endfor %}
+{% endblock %}-->
