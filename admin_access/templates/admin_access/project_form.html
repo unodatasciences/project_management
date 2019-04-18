@@ -1,10 +1,9 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block content %}
 <head>
-     <title>Projects</title>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
+     <title>Manage Projects</title>
 </head>
 
 <body>
@@ -14,11 +13,8 @@
     }
 </style>
 <p>Hello, student! Welcome to Data Sciences. There are some information about your project.</p>
-<div class="row">
-        <h3 style="padding-left: 15Px">Manage Projects</h3>
 
-
-<h2><a href="{% url 'admin_access:aa_list' %}"></a>: Edit</h2>
+<h2><a href="{% url 'admin_access:aa_list' %}">Manage Projects</a>: Edit</h2>
 
 
 <form method="post">{% csrf_token %}

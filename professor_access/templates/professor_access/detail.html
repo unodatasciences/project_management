@@ -1,12 +1,66 @@
 {% extends "base.html" %}
 
-<h2><a href="{% url 'professor_access:pa_list' %}">Projects Details</a></h2>
-{% block title %}{{ post.title }}{% endblock %}
-
 {% block content %}
-  <h1>{{ post.title }}</h1>
-  <p class="date">
-    Published {{ post.publish }} by {{ post.author }}
-  </p>
-  {{ post.body|linebreaks }}
+
+<style>
+	.input{
+		display: none;
+	}
+	.submit{
+		display: none;
+	}
+</style>
+
+<h2><a href="{% url 'professor_access:projects' %}">Project Detail</a></h2>
+
+<form method="post">{% csrf_token %}
+	
+	<p>
+		Project ID: {{project.id}}
+	</p>
+	<p>
+		Project Name:
+		<span class="text">{{project.name}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="name" value="{{project.name}}"></span>
+	</p>
+	<p>
+		Instructor:
+		<span class="text">{{project.instructor}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="instructor" value="{{project.instructor}}"></span>
+	</p>
+	<p>
+		Email: 
+		<span class="text">{{project.email}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="email" value="{{project.email}}"></span>
+	</p>
+	<p>
+		Stage: 
+		<span class="text">{{project.stage}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="stage" value="{{project.stage}}"></span>
+	</p>
+	<p>
+		Date:
+		<span class="text">{{project.date|date:'m-d-Y'}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="date" value="{{project.date|date:'Y-m-d'}}"></span>
+	</p>
+	<p>
+		<p>Background: <button type="button" class="edit">edit</button></p>
+		<span class="text">{{project.background|linebreaksbr}}</span>
+		<span class="input"><textarea cols="40" rows="5" name="background">{{project.background}}</textarea></span>
+	</p>
+	<p>
+		<input class="submit" type="submit" value="submit">
+	</p>
+</form>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$('.edit').click(function(){
+		$(this).parent().parent().find('.text').hide()
+		$(this).parent().parent().find('.input').show()
+		$('.submit').show()
+	})
+</script>
+
 {% endblock %}
