@@ -56,12 +56,12 @@
         <td>{{ project.instructor }}</td>
         <td>{{ project.email }}</td>
         <td>{{ project.stage }}</td>
-        <td><a href="{% url 'professor_access:project_edit' project.id %}">Edit</a></td>
+        <td><a href="{% url 'professor_access:detail' project.id %}">Detail</a></td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
-<a href="{% url 'professor_access:project_new' %}">New</a>
+<!--<a href="{% url 'professor_access:project_new' %}">New</a>-->
 </body>
 
 {% endblock %}
