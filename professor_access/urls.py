@@ -11,6 +11,8 @@ urlpatterns = [
   path ('edit/<int:pk>', views.professor_update, name='project_edit'),
   path ('projects', views.projects, name='projects'),
   path ('detail/<int:pk>', views.detail, name='detail'),
+  path ('files', views.files, name='files'),
+  path ('upload/<str:filename>', views.upload, name='upload'),
 
 ]
 

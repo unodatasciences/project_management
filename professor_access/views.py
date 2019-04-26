@@ -1,3 +1,4 @@
+import os
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.forms import ModelForm
 
@@ -59,3 +60,26 @@ def detail(request, pk, template_name='professor_access/detail.html'):
         return redirect('professor_access:pa_list')
 
     return render(request, template_name, locals())
+
+def files(request, template_name='professor_access/files.html'):
+    project = Project.objects.all()
+    data = {}
+    data['object_list'] = project
+
+    if request.method == 'POST':
+        id = request.POST['id']
+        file = request.FILES.get('file')
+        if file:
+            project = Project.objects.get(id=id)
+            project.file = file
+            project.save()
+            return redirect('professor_access/files')
+
+    return render(request, template_name, data)
+
+def upload(request, filename):
+    path = os.path.join('upload', filename)
+    return HttpResponse(open(path, 'rb').read())
+
+
+
