@@ -7,11 +7,10 @@ def current_date():
 
 class Project(models.Model):
     name = models.CharField(max_length=50 )
-    instructor = models.CharField(max_length=200)
-    email = models.EmailField(max_length=200)
+    student_name = models.CharField(max_length=200)
     stage = models.CharField(max_length=50)
-    date = models.DateField(default=current_date)
-    background = models.TextField(blank=True)
+    description = models.TextField(blank=True)
+    note = models.TextField(blank=True)
 
     def __str__(self):
         return str(self.id)

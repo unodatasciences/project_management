@@ -17,20 +17,7 @@
     }
 </style>
 <body id="app-layout">
-<nav class="navbar navbar-inverse">
 
-            <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!-- #menu# -->
-                <a href="{% url 'professor_access:pa_list' %}">Home</a>
-               <a href="{% url 'professor_access:projects' %}">Projects</a>
-                <a href="">Manage Files</a>
-</nav>
 <p>Hello, professor! Welcome to Data Sciences. There are some information about your projects.</p>
 <div class="row">
         <h3 style="padding-left: 15Px">Project Information</h3>
@@ -41,9 +28,9 @@
     <tr class="bg-info">
         <th>Project ID</th>
         <th>Project Name</th>
-        <th>Advisor</th>
-        <th>Email</th>
+        <th>Student Name</th>
         <th>Stage</th>
+        <th>Action</th>
         <th>Action</th>
     </tr>
     </thead>
@@ -53,10 +40,11 @@
     <tr>
         <td>{{ project.id}}</td>
         <td>{{ project.name}}</td>
-        <td>{{ project.instructor }}</td>
-        <td>{{ project.email }}</td>
+        <td>{{ project.student_name }}</td>
         <td>{{ project.stage }}</td>
-        <td><a href="{% url 'professor_access:detail' project.id %}">Detail</a></td>
+        <td><a href="{% url 'professor_access:detail' project.id %}">Detail</a>
+        <td><a href="">Upload</a></td>
+        </td>
     </tr>
     {% endfor %}
     </tbody>
