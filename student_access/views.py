@@ -39,7 +39,7 @@ def student_login(request):
 class studentForm(ModelForm):
     class Meta:
         model = Project
-        fields = ['name', 'advisor', 'email', 'stage']
+        fields = ['id','name', 'advisor', 'stage']
 
 #@login_required
 def student_list(request, template_name='student_access/sa_list.html'):
@@ -47,3 +47,23 @@ def student_list(request, template_name='student_access/sa_list.html'):
     data = {}
     data['object_list'] = project
     return render(request, template_name, data)
+
+def detail(request, pk, template_name='student_access/detail.html'):
+    project = get_object_or_404(Project, pk=pk)
+    if request.method == 'POST':
+        name = request.POST['name']
+        advisor = request.POST['advisor']
+        stage = request.POST['stage']
+        description = request.POST['description']
+        note = request.POST['note']
+
+
+        project.name = name
+        project.instructor = advisor
+        project.stage = stage
+        project.description = description
+        project.note = note
+        project.save()
+        return redirect('student_access:sa_list')
+
+    return render(request, template_name, locals())

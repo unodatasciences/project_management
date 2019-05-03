@@ -6,6 +6,7 @@ app_name = 'student_access'
 
 urlpatterns = [
   path ('', views.student_list, name='sa_list'),
+  path ('detail/<int:pk>', views.detail, name='detail'),
   path ('login/', views.student_login, name='login'),
   #path ('login/', auth_views.LoginView.as_view (), name='login'),
   path ('logout/', auth_views.LogoutView.as_view (), name='logout'),
