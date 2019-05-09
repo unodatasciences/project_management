@@ -12,7 +12,7 @@ class Project(models.Model):
     description = models.TextField(blank=True)
     note = models.TextField(blank=True)
     file = models.FileField(upload_to='upload', blank=True, null=True)
-
+    photo = models.ImageField(upload_to='upload', blank=True)
     def __str__(self):
         return str(self.id)
 

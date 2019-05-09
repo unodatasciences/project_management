@@ -8,7 +8,7 @@ from professor_access.models import Project
 class professorForm(ModelForm):
     class Meta:
         model = Project
-        fields = ['id','name', 'student_name', 'stage']
+        fields = ['id','name', 'student_name', 'stage', 'photo']
 
 def professor_list(request, template_name='professor_access/pa_list.html'):
     project = Project.objects.all()
@@ -48,14 +48,18 @@ def detail(request, pk, template_name='professor_access/detail.html'):
         student_name = request.POST['student_name']
         stage = request.POST['stage']
         description = request.POST['description']
+        photo = request.POST['photo']
         note = request.POST['note']
+
 
 
         project.name = name
         project.instructor = student_name
         project.stage = stage
         project.description = description
+        project.photo = photo
         project.note = note
+
         project.save()
         return redirect('professor_access:pa_list')
 

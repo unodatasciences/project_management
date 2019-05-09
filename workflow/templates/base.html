@@ -1,32 +1,40 @@
 {% load staticfiles %}
 <html>
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <title>math department</title>
+    <title>UNO Math Department</title>
     <style>
     body {
         font-family: Arial, Helvetica, sans-serif;
         width:800px;
         margin:auto;
-        background-color: white;
-        background-image: url(test.jpg);
+        background-color: #eee;
     }
-    a {
+    div a {
         color:black;
-        text-decoration:none;
+        font-size: 20px;
+    }
 
+    .title{
+        color:Black;
+        font-size: 35px;
+        /*background-color: #BDBDBD;*/
     }
     a:hover {
-        text-decoration:underline;
+        color:grey;
     }
+
+    .content{
+        color: black;
+    }
+
    </style>
 </head>
 <body>
 
     <div id="header">
-        <h1><a href="/">Welcome to Data Sciences</a></h1>
+        <h1><a class= "title" href="/">Welcome to Data Sciences</a></h1><br />
     </div>
-    <div id="content">
+    <div class="content">
         {% block content %}
         {% endblock %}
     </div>
