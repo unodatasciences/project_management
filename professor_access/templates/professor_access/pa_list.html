@@ -62,7 +62,7 @@
         <th>Student Name</th>
         <th>Stage</th>
         <th>Action</th>
-        <th>Action</th>
+        <!--<th>Action</th>-->
     </tr>
     {% for project in object_list %}
 
@@ -71,8 +71,8 @@
         <td>{{ project.name}}</td>
         <td>{{ project.student_name }}</td>
         <td>{{ project.stage }}</td>
-        <td><a href="{% url 'professor_access:detail' project.id %}">Detail</a>
-        <td><a href="{% url 'professor_access:files'  %}">Upload</a></td>
+        <td><a href="{% url 'professor_access:detail' project.id %}">Details</a>
+        <!--<td><a href="{% url 'professor_access:files'  %}">Upload</a></td>-->
         </td>
     </tr>
     {% endfor %}

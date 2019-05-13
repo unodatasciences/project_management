@@ -9,58 +9,75 @@
 	.submit{
 		display: none;
 	}
+	.return_home{
+		color:red;
+		text-align:right;
+		font-size:15px;
+	}
+	.prj_name{
+		text-align:center;
+		font-size:20px;
+		font-weight:bold;
+	}
+	.text{
+		 background-color:;
+		 font-size:15px;
+		 line-height: 2.5;
+	}
+	.name{
+		font-size:18px;
+		font-weight:bold;
+	}
+	.submit{
+		font-size:100px;
+	}
+
 </style>
 
-<h4><a href="{% url 'professor_access:pa_list' %}">Project Detail</a></h4>
+<p class="return_home"><a href="{% url 'professor_access:pa_list' %}">Back to Home</a></p>
 
 <form method="post">{% csrf_token %}
 	
 	<!--<p>
 		Project ID: {{project.id}}
 	</p>-->
-	<p>
-		<span class="text">{{project.name}}</span>
+	<p class="prj_name">
+		<span >{{project.name}}</span>
 		<span class="input"><input type="text" name="name" value="{{project.name}}"></span>
 	</p>
-	<p>
-		Student Name:
+	<p class="name">
+		Student Name</p>
 		<span class="text">{{project.student_name}} <button type="button" class="edit">edit</button></span>
 		<span class="input"><input type="text" name="student_name" value="{{project.student_name}}"></span>
-	</p>
+
 	<!--<p>
 		Email: 
 		<span class="text">{{project.email}} <button type="button" class="edit">edit</button></span>
 		<span class="input"><input type="text" name="email" value="{{project.email}}"></span>
 	</p>-->
-	<p>
-		Stage: 
+	<p class="name">Stage</p>
 		<span class="text">{{project.stage}} <button type="button" class="edit">edit</button></span>
 		<span class="input"><input type="text" name="stage" value="{{project.stage}}"></span>
-	</p>
 	<!--<p>
 		Date:
 		<span class="text">{{project.date|date:'m-d-Y'}} <button type="button" class="edit">edit</button></span>
 		<span class="input"><input type="text" name="date" value="{{project.date|date:'Y-m-d'}}"></span>-->
 	</p>
-	<p>
-		<p>Introduction <button type="button" class="edit">edit</button></p>
+	<p class="name">Introduction<button type="button" class="edit">edit</button></p>
 		<span class="text">{{project.description|linebreaksbr}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="description">{{project.description}}</textarea></span>
-	</p>
 	<p>
-	<p>Picture <button type="button" class="edit">edit</button>
-		<span class="text">{{project.photo}} </span>
+	<p class="name">Picture <button type="button" class="edit">edit</button></p>
+		<span class="text">{{project.photo|linebreaksbr}} </span>
 		<span class="input"><input type="photo" name="photo" value="{{project.photo}}"></span>
-		<input type="file" name="file"><input type="submit" value="upload">
 
 	</p>
 
-	<p>
-		<p>Summary <button type="button" class="edit">edit</button></p>
+	<p class="name">Summary <button type="button" class="edit">edit</button></p>
 		<span class="text">{{project.note|linebreaksbr}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="note">{{project.note}}</textarea></span>
-	</p>
-	<p>
+
+	<p class="submit">
 		<input class="submit" type="submit" value="submit">
 	</p>
 </form>
@@ -74,5 +91,6 @@
 		$('.submit').show()
 	})
 </script>
+<hr />
 
 {% endblock %}
