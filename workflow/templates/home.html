@@ -1,16 +1,17 @@
 {% extends "base.html" %}
-<style>
-   a {
-   color: red;
-   font-size: 30px;
-   }
+<html>
+<head>
+    <title>UNO Math Department</title>
 
-</style>
+</head>
 
+<body>
 {% block content %}
 
-<a href="{% url 'student_access:login' %}">Student Access</a><br /><br />
-<a href="{% url 'professor_access:pa_list' %}">Professor Access</a><br /><br />
-<a href="{% url 'admin_access:aa_list' %}">Admin Access</a><br />
+    <p class="p2"><a href="{% url 'student_access:login' %}">Login - Student Access</a><br /></p>
+    <p class="p2"><a href="{% url 'professor_access:pa_list' %}">Login - Professor Access</a><br /></p>
+    <p class="p2"><a href="{% url 'admin_access:aa_list' %}">Login - Admin Access</a><br /><br /><br /></p><hr />
 
 {% endblock %}
+</body>
+</html>
