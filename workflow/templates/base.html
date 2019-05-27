@@ -18,44 +18,61 @@
         color:grey;
     }
 
-    .p1 {
-        width: 1200px;
-        height: 200px;
-        color:black;
-        background-color:lightgrey;
-        text-indent: 99px;
-        font-size:55px;
-        line-height: 200px;
-        font-weight: bold;
+    .title {
+        margin-top:70px;
+        margin-bottom:30px;
+        font-family:"Helvetia Neue","Helvetica";
+        float:left;
+        line-height:20px;
+        text-size-adjust:100%;
+        font-size:63px;
+        font-weight:bold;
+        text-indent:60px;
     }
     .p2 {
         font-size:18px;
-        text-indent: 99px;
+        text-indent: 130px;
     }
     .p3 {
         font-size:14px;
         text-align:center;
+        text-indent: 100px;
+    }
+    .p4{
+        text-indent:135px;
+    }
+    img.img1{
+        height:40px;
+        position:relative;
+        left:135px;
+
     }
 
-    img.img1{
-        height: 40px;
-    }
     .bottom {
        text-indent:135px;
+    }
+    .box{
+        width:1030px;
+        height:151px;
+        border-color:#eee;
+        background-color:#eee;
+        border-style:none;
+        margin:30px auto;
+        padding:30px 15px;
+
     }
 
 
    </style>
 </head>
-
-    <p class="p1"><a class= "title" href="/" >Data Sciences</a></p>
-
-    <div class="box">
+    <div class="box"><a class= "title" href="/" >Data Sciences</a></div>
+    </div>
+    <div>
         {% block content %}
         {% endblock %}
     </div>
 ﻿   <img class= "img1" src = "static/images/Lock-up_Black.png" name = "UNO"><a href = "https://www.unomaha.edu/college-of-arts-and-sciences/mathematics/about-us/index.php" target = _blank>
-    </img>Department of Mathematics</a> 6001 Dodge Street Omaha, NE 68182-0243<br />
-<p class="bottom">Main Office: 402.554.3841 Email: margaretmainelli@unomaha.edu</p>
+    </img><div class="p4">Department of Mathematics</a> 6001 Dodge Street Omaha, NE 68182-0243<br />
+<div class="bottom">Main Office: 402.554.3841 Email: margaretmainelli@unomaha.edu</div>
 </body>
 </html>
