@@ -14,7 +14,7 @@
         }
 
     .table {
-        width:800px;
+        width:900px;
         margin: left;
         /*border:2px solid black;
         border-spacing:0px;*/
@@ -22,6 +22,8 @@
         background-color:lightgrey;
         font-size:16px;
         line-height: 35px;
+        margin: 30px auto;
+        text-indent:10px;
     }
 
     td,th {
@@ -36,17 +38,10 @@
         background-color:darkgrey;
     }
 
-    .hello_pf{
+    .hello{
         font-size: 20px;
-        text-indent:135px;
+        text-indent:330px;
 
-    }
-
-    img.img2{
-        height: 40px;
-    }
-    .bottom {
-       text-indent:135px;
     }
 
     </style>
@@ -54,7 +49,7 @@
 
 <body>
 
-<p class="hello_pf">Hello, professor! Welcome to Data Sciences. There are some information about your projects.</p>
+<p class="hello">Hello, professor! Welcome to Data Sciences. There are some information about your projects.</p>
 <!--<h3>Project Information</h3>-->
 
 <table class="table">
@@ -79,7 +74,7 @@
     </tr>
     {% endfor %}
     </tbody>
-</table><br /><br /><hr />
+</table><br /><br />
 
 <!--<a href="{% url 'professor_access:project_new' %}">New</a>-->
 </body>

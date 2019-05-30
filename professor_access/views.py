@@ -54,7 +54,7 @@ def detail(request, pk, template_name='professor_access/detail.html'):
 
 
         project.name = name
-        project.instructor = student_name
+        project.student_name= student_name
         project.stage = stage
         project.description = description
         project.photo = photo

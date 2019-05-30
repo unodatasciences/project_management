@@ -29,28 +29,32 @@
         font-weight:bold;
         text-indent:60px;
     }
-    .p2 {
+    .login {
+        width:1024px;
+        height:200px;
         font-size:18px;
-        text-indent: 130px;
+        line-height:40px;
+        margin:auto;
+
+
     }
     .p3 {
         font-size:14px;
         text-align:center;
         text-indent: 100px;
     }
-    .p4{
-        text-indent:135px;
+    .span{
+        position:relative;
+        left:180px;
     }
     img.img1{
         height:40px;
-        position:relative;
-        left:135px;
+        /*position:relative;
+        left:180px;*/
+        vertical-align:left;
 
     }
 
-    .bottom {
-       text-indent:135px;
-    }
     .box{
         width:1030px;
         height:151px;
@@ -61,7 +65,14 @@
         padding:30px 15px;
 
     }
-
+    .footer{
+        width:1030px;
+        height:151px;
+        margin:30px auto;
+    }
+    .p4 {
+        text-indent:135px;
+    }
 
    </style>
 </head>
@@ -71,8 +82,15 @@
         {% block content %}
         {% endblock %}
     </div>
-﻿   <img class= "img1" src = "static/images/Lock-up_Black.png" name = "UNO"><a href = "https://www.unomaha.edu/college-of-arts-and-sciences/mathematics/about-us/index.php" target = _blank>
-    <div class="p4">Department of Mathematics </a></img>6001 Dodge Street Omaha, NE 68182-0243<br /></div>
-<div class="bottom">Main Office: 402.554.3841 Email: margaretmainelli@unomaha.edu</div>
+﻿
+    <div class="footer">
+        <hr />
+        <img class= "img1" src = "static/images/Lock-up_Black.png" name = "UNO" /><a href = "https://www.unomaha.edu/college-of-arts-and-sciences/mathematics/about-us/index.php" target = _blank>
+        Department of Mathematics</a>6001 Dodge Street Omaha, NE 68182-0243<br />
+        <p class="p4">Main Office: 402.554.3841 Email: margaretmainelli@unomaha.edu</p>
+
+    </div>
+
+
 </body>
 </html>
