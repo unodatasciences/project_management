@@ -5,27 +5,53 @@
 <!--<a href="{% url 'student_access:sa_list' %}">Student Access</a>-->
 
 <head>
-     <title>Projects</title>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <title>Projects</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            }
 
+        .table {
+            width:1030px;
+            margin: left;
+            /*border:2px solid black;
+            border-spacing:0px;*/
+            border-collapse: collapse;
+            background-color:lightgrey;
+            font-size:16px;
+            line-height: 35px;
+            margin: 30px auto;
+            text-indent:10px;
+                }
+
+        td,th {
+		    border:2px solid black;
+	           }
+
+	    tr:nth-child(odd){
+	     background-color:white;
+	            }
+
+        tr:hover{
+            background-color:darkgrey;
+                }
+
+        .hello1{
+            font-size:20px;
+            width:1030px;
+            margin: 10px auto;
+                }
+
+   </style>
 </head>
 
 <body>
-<style>
-    body {
-        background-color: #eee;
-    }
-</style>
 
-<p>Hello, student! Welcome to Data Sciences. There are some information about your project.</p>
-
-<div class="row">
-        <h3 style="padding-left: 15Px">Project Information</h3>
-</div>
-
-<table class="table table-striped table-bordered table-hover">
+<p class="hello1">Hello, student! Welcome to Data Sciences. There are some information about your project.</p>
+<table class="table">
     <thead>
-    <tr class="bg-info">
+    <tr>
         <th>Project ID</th>
         <th>Project Name</th>
         <th>Advisor</th>
@@ -35,7 +61,6 @@
     </thead>
     <tbody>
     {% for project in object_list %}
-
     <tr>
         <td>{{ project.id}}</td>
         <td>{{ project.name }}</td>

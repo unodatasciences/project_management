@@ -24,7 +24,6 @@
 		font-size:18px;
 	}
 	.text{
-		 background-color:;
 		 font-size:18px;
 		 line-height: 2.5;
 	}
@@ -75,22 +74,24 @@
 	<p class="name">Introduction<button type="button" class="edit">edit</button></p>
 		<span class="text">{{project.description|linebreaksbr}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="description">{{project.description}}</textarea></span>
-	<p>
-	<p class="name">Picture <button type="button" class="edit">edit</button></p>
-		<span class="text">{{project.photo|linebreaksbr}} </span>
-		<span class="input"><input type="photo" name="photo" value="{{project.photo}}"></span>
 
+	<p class="name">Picture<input type="file" name="file">
 	</p>
 
 	<p class="name">Summary <button type="button" class="edit">edit</button></p>
 		<span class="text">{{project.note|linebreaksbr}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="note">{{project.note}}</textarea></span>
 
+
+
+
 	<p class="submit">
 		<input class="submit" type="submit" value="submit">
 	</p>
-</form>
 
+
+
+</form>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>

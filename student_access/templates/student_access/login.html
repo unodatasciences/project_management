@@ -1,13 +1,22 @@
 {% extends "base.html" %}
-
+<html>
+<header>
 {% block title %}Log-in{% endblock %}
+  <style>
 
+  </style>
+</header>
+<body>
 {% block content %}
-  <h1>Log-in</h1>
-  <p>Please, use the following form to log-in:</p>
-  <form action="." method="post">
-    {{ form.as_p }}
-    {% csrf_token %}
+<div class="login">
+    <div lsa>Login -- Student Access</div>
+    <p>Hello, use the following form to log-in:</p>
+    <form action="." method="post">
+      {{ form.as_p }}
+      {% csrf_token %}
     <p><input type="submit" value="Log in"></p>
-  </form>
+    </form>
 {% endblock %}
+</div>
+</body>
+</html>
