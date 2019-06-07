@@ -57,11 +57,7 @@
 		<span class="input"><input type="text" name="advisor" value="{{project.advisor}}"></span>
 	</p>
 
-	<p class="name">
-		Stage
-		<span class="text">{{project.stage}} <button type="button" class="edit">edit</button></span>
-		<span class="input"><input type="text" name="stage" value="{{project.stage}}"></span>
-	</p>
+
 	<!--<p>
 		Date:
 		<span class="text">{{project.date|date:'m-d-Y'}} <button type="button" class="edit">edit</button></span>
@@ -76,6 +72,11 @@
 		<p class="name">Summary</p>
 		<span class="text">{{project.note|linebreaksbr}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="note">{{project.note}}</textarea></span>
+	</p>
+		<p class="name">
+		Stage
+		<span class="text">{{project.stage}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="stage" value="{{project.stage}}"></span>
 	</p>
 	<p>
 		<input class="submit" type="submit" value="submit">

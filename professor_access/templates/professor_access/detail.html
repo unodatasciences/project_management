@@ -63,9 +63,7 @@
 		<span class="text">{{project.email}} <button type="button" class="edit">edit</button></span>
 		<span class="input"><input type="text" name="email" value="{{project.email}}"></span>
 	</p>-->
-	<p class="name">Stage</p>
-		<span class="text">{{project.stage}} <button type="button" class="edit">edit</button></span>
-		<span class="input"><input type="text" name="stage" value="{{project.stage}}"></span>
+
 	<!--<p>
 		Date:
 		<span class="text">{{project.date|date:'m-d-Y'}} <button type="button" class="edit">edit</button></span>
@@ -75,20 +73,22 @@
 		<span class="text">{{project.description|linebreaksbr}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="description">{{project.description}}</textarea></span>
 
-	<p class="name">Picture<input type="file" name="file">
-	</p>
+
 
 	<p class="name">Summary <button type="button" class="edit">edit</button></p>
 		<span class="text">{{project.note|linebreaksbr}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="note">{{project.note}}</textarea></span>
 
 
-
+	<p class="name">Stage</p>
+		<span class="text">{{project.stage}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="stage" value="{{project.stage}}"></span>
 
 	<p class="submit">
 		<input class="submit" type="submit" value="submit">
 	</p>
-
+	<p class="name">Picture<input type="file" name="file">
+	</p>
 
 
 </form>
