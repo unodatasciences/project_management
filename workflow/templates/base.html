@@ -1,5 +1,4 @@
 {% load staticfiles %}
-<div>
 <head>
     <title>UNO Math Department</title>
     <style>
@@ -19,16 +18,30 @@
     }
 
     .title {
-        margin-top:70px;
+        margin-top:30px;
         margin-bottom:30px;
         font-family:"Helvetia Neue","Helvetica";
         float:left;
         line-height:20px;
         text-size-adjust:100%;
-        font-size:63px;
+        font-size:50px;
         font-weight:bold;
         text-indent:60px;
     }
+
+    #subtitle {
+        margin-top:80px;
+        margin-bottom:30px;
+        float:center;
+        font-family:"Helvetia Neue","Helvetica";
+        text-indent:60px;
+        font-size:25px;
+        line-height:60px;
+        font-weight:none;
+
+
+    }
+
     .login {
         width:1024px;
         height:200px;
@@ -69,15 +82,18 @@
         width:1030px;
         height:151px;
         margin:30px auto;
+        text-align:left;
+        font-size:16px;
+
     }
-    .p4 {
-        text-indent:135px;
-    }
+
 
    </style>
 </head>
-    <div class="box"><a class= "title" href="/" >Data Sciences</a></div>
+    <div class="box"><a class= "title" href="/" >Project Management System</a>
+        <div id="subtitle">UNO Data Consulting Lab</div>
     </div>
+
     <div>
         {% block content %}
         {% endblock %}
@@ -85,10 +101,11 @@
 ﻿
     <div class="footer">
         <hr />
-        <img class= "img1" src = "static/images/Lock-up_Black.png" name = "UNO" /><a href = "https://www.unomaha.edu/college-of-arts-and-sciences/mathematics/about-us/index.php" target = _blank>
-        Department of Mathematics</a>6001 Dodge Street Omaha, NE 68182-0243<br />
-        <p class="p4">Main Office: 402.554.3841 Email: margaretmainelli@unomaha.edu</p>
-
+        <p>
+         Copyright &copy;2019 UNO Math Department Data and decision sciences Group</p>
+        Data Consulting Lab,
+        6001 Dodge Street Omaha, NE 68182-0243
+        Email: xycheng@unomaha.edu
     </div>
 
 
