@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'student_access',
     'professor_access',
     'admin_access',
-    #'blog.apps.BlogConfig'
-    #'blog'
+    'mdeditor',
 
 
 ]
@@ -58,6 +57,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'datascicences.urls'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/media/'
 
 TEMPLATES = [
     {

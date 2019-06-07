@@ -28,3 +28,11 @@ class Project(models.Model):
         if self.file:
             return self.file.url
         return ''
+
+
+from mdeditor.fields import MDTextField
+
+class ExampleModel(models.Model):
+    name = models.CharField(max_length=10)
+    content = MDTextField()
+

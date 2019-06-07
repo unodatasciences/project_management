@@ -45,8 +45,10 @@
 <div class="detail_content">
 <div class="return_home"><a href="{% url 'professor_access:pa_list' %}">Back to Home</a></div>
 
-<form method="post">{% csrf_token %}
-
+<form method="post">
+	{% csrf_token %}
+	{{ form.media }}
+	{{ form.as_p }}
 	<!--<p>
 		Project ID: {{project.id}}
 	</p>-->
@@ -83,11 +85,11 @@
 	<p class="name">Stage</p>
 		<span class="text">{{project.stage}} <button type="button" class="edit">edit</button></span>
 		<span class="input"><input type="text" name="stage" value="{{project.stage}}"></span>
+		<p class="name">Picture<input type="file" name="file">
+	</p>
 
 	<p class="submit">
 		<input class="submit" type="submit" value="submit">
-	</p>
-	<p class="name">Picture<input type="file" name="file">
 	</p>
 
 
