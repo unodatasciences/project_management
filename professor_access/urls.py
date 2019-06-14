@@ -1,4 +1,6 @@
-from django.urls import path
+from django.urls import include, path
+from django.conf.urls.static import static
+
 
 from . import views
 
@@ -13,6 +15,7 @@ urlpatterns = [
   path ('detail/<int:pk>', views.detail, name='detail'),
   path ('files', views.files, name='files'),
   path ('upload/<str:filename>', views.upload, name='upload'),
+  path ('mdeditor', include ('mdeditor.urls'))
 
 ]
 

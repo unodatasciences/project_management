@@ -134,4 +134,3 @@ LOGIN_URL = 'student_access:login'
 LOGOUT_URL = 'logout'
 
 
-

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 <head>
     <title>UNO Math Department</title>
@@ -10,10 +11,14 @@
 <p id="log_des">Hello, please choose from below options to login.</p>
 <div class ="login">
     <div class="login1">﻿
-        <img src="" />
-        <a href="{% url 'student_access:login' %}">Login - Student Assistant</a></div><br />
-    <div class="login1"><a href="{% url 'professor_access:pa_list' %}">Login - Advisor</a></div><br />
-    <div class="login1"><a href="{% url 'admin_access:aa_list' %}">Login - Admin</a><br /></div><br />
+        <img class="img1" src="/static/images/student_assistant.png"/><br /><br />
+        <a href="{% url 'student_access:login' %}">Login - Student Assistant</a></div><br /><br />
+    <div class="login1"><a href="{% url 'professor_access:pa_list' %}">
+        <img class="img2" src="/static/images/advisor.png" /><br /><br />
+            Login - Advisor</a></div><br />
+    <div class="login1">
+        <img class="img3" src="/static/images/admin.png"/><br /><br />
+        <a href="{% url 'admin_access:aa_list' %}">Login - Admin</a><br /></div>
 </div>
 
 {% endblock %}

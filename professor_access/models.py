@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from mdeditor.fields import MDTextField
 
 def current_date():
     return timezone.localdate()
@@ -12,7 +13,7 @@ class Project(models.Model):
     description = models.TextField(blank=True)
     note = models.TextField(blank=True)
     file = models.FileField(upload_to='upload', blank=True, null=True)
-    photo = models.ImageField(upload_to='upload', blank=True)
+    test=MDTextField()
     def __str__(self):
         return str(self.id)
 
@@ -30,9 +31,8 @@ class Project(models.Model):
         return ''
 
 
-from mdeditor.fields import MDTextField
 
 class ExampleModel(models.Model):
-    name = models.CharField(max_length=10)
+    name = models.CharField(max_length=10000)
     content = MDTextField()
 
