@@ -1,7 +1,9 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
-from mdeditor.fields import MDTextField
+#from mdeditor.fields import MDTextField
+from ckeditor.fields import RichTextField
+
 
 def current_date():
     return timezone.localdate()
@@ -11,9 +13,10 @@ class Project(models.Model):
     student_name = models.CharField(max_length=200)
     stage = models.CharField(max_length=50)
     description = models.TextField(blank=True)
-    note = models.TextField(blank=True)
+    #note = models.TextField(blank=True)
+    note = RichTextField()
     file = models.FileField(upload_to='upload', blank=True, null=True)
-    test=MDTextField()
+    #test=MDTextField()
     def __str__(self):
         return str(self.id)
 
@@ -32,7 +35,7 @@ class Project(models.Model):
 
 
 
-class ExampleModel(models.Model):
-    name = models.CharField(max_length=10000)
-    content = MDTextField()
+#class ExampleModel(models.Model):
+#    name = models.CharField(max_length=10000)
+#    content = MDTextField()
 
