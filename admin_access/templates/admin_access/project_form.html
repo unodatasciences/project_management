@@ -4,22 +4,42 @@
 {% block content %}
 <head>
      <title>Manage Projects</title>
+    <style>
+        .hello{
+            font-size:20px;
+            width:1030px;
+            margin: 10px auto;
+        }
+
+        .edit_content{
+            width:1030px;
+            margin: left;
+            /*border:2px solid black;
+            border-spacing:0px;*/
+            border-collapse: collapse;
+            font-size:16px;
+            line-height: 35px;
+            margin: 30px auto;
+            text-indent:10px;
+        }
+
+        /*.button{
+            margin: 30px auto;
+            text-indent:10px;
+        }*/
+    </style>
 </head>
 
 <body>
-<style>
-    body {
-        background-color: #eee;
-    }
-</style>
-<p>Hello, student! Welcome to Data Sciences. There are some information about your project.</p>
 
+<p class="hello">Welcome to the Project Management System, there are some information about your project.</p>
+
+<div class="edit_content">
 <h2><a href="{% url 'admin_access:aa_list' %}">Manage Projects</a>: Edit</h2>
-
-
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Submit" />
+    <div class="button"><input type="submit" value="Submit" /></div>
 </form>
-
+</div>
+</body>
 {% endblock %}

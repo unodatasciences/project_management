@@ -2,12 +2,27 @@
 {% load staticfiles %}
 
 {% block content %}
-
-<h2><a href="{% url 'admin_access:aa_list' %}">Manage Projects</a>: Delete?</h2>
+<header>
+    <style>
+        .edit_content{
+            width:1030px;
+            margin: left;
+            /*border:2px solid black;
+            border-spacing:0px;*/
+            border-collapse: collapse;
+            font-size:16px;
+            line-height: 35px;
+            margin: 30px auto;
+            text-indent:10px;
+        }
+    </style>
+</header>
+<div class="edit_content">
+<h3><a href="{% url 'admin_access:aa_list' %}">Manage Projects</a>: Delete?</h3>
 
 <form method="post">{% csrf_token %}
     Are you sure you want to delete "{{ object }}" ?<br/>
     <input type="submit" value="Delete" />
 </form>
-
+</div>
 {% endblock %}
