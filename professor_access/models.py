@@ -2,7 +2,10 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 #from mdeditor.fields import MDTextField
-from ckeditor.fields import RichTextField
+#from ckeditor.fields import RichTextField
+from tinymce.models import HTMLField
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 
 def current_date():
@@ -13,8 +16,10 @@ class Project(models.Model):
     student_name = models.CharField(max_length=200)
     stage = models.CharField(max_length=50)
     description = models.TextField(blank=True)
-    #note = models.TextField(blank=True)
-    note = RichTextField()
+    note = models.TextField(blank=True)
+    #note = RichTextUploadingField()
+    #note = HTMLField ()
+    #note = RichTextField()
     file = models.FileField(upload_to='upload', blank=True, null=True)
     #test=MDTextField()
     def __str__(self):

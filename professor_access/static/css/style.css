@@ -1,0 +1,36 @@
+	.input{
+		display: none;
+	}
+	.submit{
+		display: none;
+	}
+	.return_home{
+		color:red;
+		text-align:right;
+		font-size:18px;
+	}
+	.prj_name{
+		text-align:center;
+		font-size:25px;
+		font-weight:bold;
+	}
+	.student_name{
+		text-align:center;
+		font-size:18px;
+	}
+	.text{
+		 font-size:18px;
+		 line-height: 2.5;
+	}
+	.name{
+		font-size:18px;
+		font-weight:bold;
+	}
+	.submit{
+		font-size:100px;
+	}
+	.detail_content{
+		width:1030px;
+		margin: 10px auto;
+		padding:10px;
+	}

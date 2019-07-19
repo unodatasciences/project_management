@@ -25,7 +25,7 @@ SECRET_KEY = 'n9n3!kveh*lg^+09$fmxdj5clsdzhjnk4znc*jmhn=#lvivc=&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'professor_access',
     'admin_access',
     #'mdeditor',
-    'ckeditor',
+    #'ckeditor',
+    #'tinymce',
+    #'ckeditor_uploader',
 
 
 ]
@@ -60,6 +62,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'datascicences.urls'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/media/'
+CKEDITOR_UPLOAD_PATH = 'upload/'
 
 TEMPLATES = [
     {
@@ -134,4 +137,20 @@ LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'student_access:login'
 LOGOUT_URL = 'logout'
 
+#TINYMCE_DEFAULT_CONFIG = {
+#    'theme': 'advanced',
+#    'width': 800,
+#    'height': 600,
+#}
 
+CKEDITOR_CONFIGS = {
+    'default': {
+
+    }
+}
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'width': 600,
+    'height': 400,
+}

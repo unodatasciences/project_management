@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
 
 <style>
 	.input{
@@ -31,6 +33,10 @@
 		font-size:18px;
 		font-weight:bold;
 	}
+	.line{
+		margin: 20px;
+	}
+
 	.submit{
 		font-size:100px;
 	}
@@ -39,13 +45,15 @@
 		margin: 10px auto;
 		padding:10px;
 	}
-
+	.ql-container{
+		height: 50vh;
+	}
 </style>
 
 <div class="detail_content">
 <div class="return_home"><a href="{% url 'professor_access:pa_list' %}">Back to Home</a></div>
 
-<form method="post">
+<form method="post" id="form">
 {% csrf_token %}
 <!--{{ form.media }}
 	{{ form.as_p }}
@@ -72,14 +80,19 @@
 		<span class="input"><input type="text" name="date" value="{{project.date|date:'Y-m-d'}}"></span>-->
 	</p>
 	<p class="name">Introduction<button type="button" class="edit">edit</button></p>
-		<span class="text">{{project.description|linebreaksbr}}</span>
-		<span class="input"><textarea cols="40" rows="5" name="description">{{project.description}}</textarea></span>
+		<div class="text">{{project.description|linebreaksbr}}</div>
+		<div class="input"><textarea cols="40" rows="5" name="description">{{project.description}}</textarea></div>
 {% autoescape off %}
+
 	<p class="name">Summary <button type="button" class="edit">edit</button></p>
-		<span class="text">{{project.note|linebreaksbr}}</span>
-		<span class="input"><textarea cols="40" rows="5" name="note">{{project.note}}</textarea></span>
-{% endautoescape off %}
-	<p class="name">Picture<input type="file" name="file"></p>
+		<div class="text">{{project.note|safe}}</div>
+		<div class="input">
+			<input type="hidden" name="note" id="note">
+			<div id="editor">{{project.note|safe}}</div>
+		</div>
+<!--{% endautoescape off %}-->
+
+	<!--<p class="name">Picture<input type="file" name="file"></p>-->
 
 	<p class="name">Stage</p>
 		<span class="text">{{project.stage}} <button type="button" class="edit">edit</button></span>
@@ -94,15 +107,43 @@
 </form>
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
 <script>
 	$('.edit').click(function(){
 		$(this).parent().parent().find('.text').hide()
+		console.log(this)
+		console.log($(this).parent())
 		$(this).parent().parent().find('.input').show()
 		$('.submit').show()
 	})
+
+	var quill = new Quill('#editor', {
+		theme: 'snow',
+		modules: {
+			toolbar: [
+				[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+				['bold', 'italic', 'underline'],        // toggled buttons
+				['code-block'],
+				[{ 'list': 'ordered'}, { 'list': 'bullet' }],
+				[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+				[{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+				[{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+				[{ 'align': [] }, 'image', 'clean'],
+			]
+		}
+	});
+
+	$('#form').submit(function () {
+		var html = quill.container.firstChild.innerHTML
+		$('#note').val(html)
+	})
+
 </script>
-<p class="return_home"><a href="{% url 'professor_access:pa_list' %}">Back to Home</a></p>
+
+
+<div class="return_home"><a href="{% url 'professor_access:pa_list' %}">Back to Home</a></div>
 
 	</div>
 {% endblock %}
