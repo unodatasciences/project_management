@@ -3,7 +3,6 @@
 {% block content %}
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
-
 <style>
 	.input{
 		display: none;
@@ -77,14 +76,20 @@
 	<!--<p>
 		Date:
 		<span class="text">{{project.date|date:'m-d-Y'}} <button type="button" class="edit">edit</button></span>
-		<span class="input"><input type="text" name="date" value="{{project.date|date:'Y-m-d'}}"></span>-->
-	</p>
-	<p class="name">Introduction<button type="button" class="edit">edit</button></p>
-		<div class="text">{{project.description|linebreaksbr}}</div>
-		<div class="input"><textarea cols="40" rows="5" name="description">{{project.description}}</textarea></div>
-{% autoescape off %}
+		<span class="input"><input type="text" name="date" value="{{project.date|date:'Y-m-d'}}"></span>
+	</p>-->
+	<div class="name">
+		<p>Introduction<button type="button" class="edit">edit</button></p>
+		<div class="text">{{project.description|safe}}</div>
+		<div class="input">
+			<input type="hidden" name="description" id="description">
+			<div id ="editor1">{{project.description|safe}}</input></div>
+		</div>
+	</div>
+<!--{% autoescape off %}-->
 
-	<p class="name">Summary <button type="button" class="edit">edit</button></p>
+
+	<div class="name">Summary<button type="button" class="edit">edit</button></div>
 		<div class="text">{{project.note|safe}}</div>
 		<div class="input">
 			<input type="hidden" name="note" id="note">
@@ -94,14 +99,14 @@
 
 	<!--<p class="name">Picture<input type="file" name="file"></p>-->
 
-	<p class="name">Stage</p>
+	<div class="name">Stage</div>
 		<span class="text">{{project.stage}} <button type="button" class="edit">edit</button></span>
-		<span class="input"><input type="text" name="stage" value="{{project.stage}}"></span>
+	<span class="input"><input type="text" name="stage" value="{{project.stage}}"></span>
 
 
-	<p class="submit">
+	<div class="submit">
 		<input class="submit" type="submit" value="submit">
-	</p>
+	</div>
 
 
 </form>
@@ -127,9 +132,9 @@
 				['bold', 'italic', 'underline'],        // toggled buttons
 				['code-block'],
 				[{ 'list': 'ordered'}, { 'list': 'bullet' }],
-				[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-				[{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-				[{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+				[{ 'script': 'sub'}, { 'script': 'super' }],
+				[{ 'indent': '-1'}, { 'indent': '+1' }],
+				[{ 'color': [] }, { 'background': [] }],          
 				[{ 'align': [] }, 'image', 'clean'],
 			]
 		}
@@ -140,6 +145,33 @@
 		$('#note').val(html)
 	})
 
+	$('.edit1').click(function(){
+		$(this).parent().parent().find('.text').hide()
+		console.log(this)
+		console.log($(this).parent())
+		$(this).parent().parent().find('.input').show()
+		$('.submit').show()
+	})
+	var quill1= new Quill('#editor1', {
+		theme: 'snow',
+		modules: {
+			toolbar: [
+				[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+				['bold', 'italic', 'underline'],        // toggled buttons
+				['code-block'],
+				[{ 'list': 'ordered'}, { 'list': 'bullet' }],
+				[{ 'script': 'sub'}, { 'script': 'super' }],
+				[{ 'indent': '-1'}, { 'indent': '+1' }],
+				[{ 'color': [] }, { 'background': [] }],
+				[{ 'align': [] }, 'image', 'clean'],
+			]
+		}
+	});
+
+	$('#form').submit(function () {
+		var html = quill1.container.firstChild.innerHTML
+		$('#description').val(html)
+	})
 </script>
 
 
