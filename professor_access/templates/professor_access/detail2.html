@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+<header>
+<style>
+	.input{
+		display: none;
+	}
+	.submit{
+		display: none;
+	}
+	.back_button{
+		text-align:right;
+		font-size:18px;
+
+	}
+	.content_s{
+		width:1030px;
+		margin: 10px auto;
+		padding:10px;
+	}
+	.prj_name{
+		text-align:center;
+		font-size:25px;
+		font-weight:bold;
+	}
+	.professor_name{
+		text-align:center;
+		font-size:18px;
+	}
+	.text{
+		 font-size:18px;
+		 line-height: 2.5;
+	}
+	.name{
+		font-size:18px;
+		font-weight:bold;
+	}
+</style>
+</header>
+<body>
+<div class="content_s">
+<div class="back_button"><a href="{% url 'professor_access:sa_list' %}">Back to Home</a></div>
+
+<form method="post">{% csrf_token %}
+
+	<!--<p>
+		Project ID: {{project.id}}
+	</p>-->
+	<p>
+		<div class="prj_name">{{project.name}}</div>
+		<span class="input"><input type="text" name="name" value="{{project.name}}"></span>
+	</p>
+	<p>
+		<div class="professor_name">{{project.advisor}} </div>
+		<span class="input"><input type="text" name="advisor" value="{{project.advisor}}"></span>
+	</p>
+
+
+	<!--<p>
+		Date:
+		<span class="text">{{project.date|date:'m-d-Y'}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="date" value="{{project.date|date:'Y-m-d'}}"></span>-->
+	</p>
+	<p class="name">Introduction</p>
+{% autoescape off %}
+		<span class="text">{{project.description|linebreaksbr}}</span>
+		<span class="input"><textarea cols="40" rows="5" name="description">{{project.description}}</textarea></span>
+
+
+	<p>
+		<p class="name">Summary</p>
+		<span class="text">{{project.note|linebreaksbr}}</span>
+		<span class="input"><textarea cols="40" rows="5" name="note">{{project.note}}</textarea></span>
+	</p>
+	{% endautoescape %}
+		<p class="name">
+		Stage
+		<span class="text">{{project.stage}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="stage" value="{{project.stage}}"></span>
+	</p>
+	<p>
+		<input class="submit" type="submit" value="submit">
+	</p>
+
+</form>
+<div class="back_button"><a href="{% url 'professor_access:sa_list' %}">Back to Home</a></div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--<script>
+	$('.edit').click(function(){
+		$(this).parent().parent().find('.text').hide()
+		$(this).parent().parent().find('.input').show()
+		$('.submit').show()
+	})
+</script>-->
+</div>
+{% endblock %}
+</body>
+</html>

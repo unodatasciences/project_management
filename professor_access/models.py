@@ -38,7 +38,15 @@ class Project(models.Model):
             return self.file.url
         return ''
 
+class Project2 (models.Model):
+    name = models.CharField (max_length=50)
+    advisor = models.CharField (max_length=200)
+    stage = models.CharField (max_length=50)
+    description = models.TextField (blank=True)
+    note = models.TextField (blank=True)
 
+    def __str__(self):
+        return str (self.name)
 
 #class ExampleModel(models.Model):
 #    name = models.CharField(max_length=10000)

@@ -16,6 +16,11 @@ def professor_list(request, template_name='professor_access/pa_list.html'):
     data['object_list'] = project
     return render(request, template_name, data)
 
+def student_list(request, template_name='professor_access/sa_list.html'):
+    project =Project.objects.all()
+    data = {}
+    data['object_list'] = project
+    return render(request, template_name, data)
 
 
 def professor_create(request, template_name='professor_access/project_form.html'):
@@ -50,8 +55,6 @@ def detail(request, pk, template_name='professor_access/detail.html'):
         description = request.POST['description']
         note = request.POST['note']
 
-
-
         project.name = name
         project.student_name= student_name
         project.stage = stage
@@ -62,6 +65,28 @@ def detail(request, pk, template_name='professor_access/detail.html'):
         return redirect('professor_access:pa_list')
 
     return render(request, template_name, locals())
+
+
+def detail2(request, pk, template_name='professor_access/detail2.html'):
+    project = get_object_or_404(Project, pk=pk)
+    if request.method == 'POST':
+        name = request.POST['name']
+        advisor = request.POST['advisor']
+        stage = request.POST['stage']
+        description = request.POST['description']
+        note = request.POST['note']
+
+
+        project.name = name
+        project.instructor = advisor
+        project.stage = stage
+        project.description = description
+        project.note = note
+        project.save()
+        return redirect('professor_access:sa_list')
+
+    return render(request, template_name, locals())
+
 
 def files(request, template_name='professor_access/files.html'):
     project = Project.objects.all()

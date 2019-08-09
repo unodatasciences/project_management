@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!--<a href="{% url 'student_access:sa_list' %}">Student Access</a>-->
+
+<head>
+    <title>Projects</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+
+        .table {
+            width:1030px;
+            margin: left;
+            /*border:2px solid black;
+            border-spacing:0px;*/
+            border-collapse: collapse;
+            background-color:lightgrey;
+            font-size:16px;
+            line-height: 35px;
+            margin: 30px auto;
+            text-indent:10px;
+                }
+
+        td,th {
+		    border:2px solid black;
+	           }
+
+	    tr:nth-child(odd){
+	     background-color:white;
+	            }
+
+        tr:hover{
+            background-color:darkgrey;
+                }
+
+        .hello1{
+            font-size:20px;
+            width:1030px;
+            margin: 10px auto;
+                }
+
+   </style>
+</head>
+
+<body>
+
+<p class="hello1">Welcome to the Project Management System, there are some information about your project.</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Project ID</th>
+        <th>Project Name</th>
+        <th>Advisor</th>
+        <th>Stage</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for project in object_list %}
+    <tr>
+        <td>{{ project.id}}</td>
+        <td>{{ project.name }}</td>
+        <td>{{ project.advisor }}</td>
+        <td>{{ project.stage }}</td>
+        <td><a href="{% url 'professor_access:detail2' project.id %}">Detail</a>
+    </tr>
+    <!--<li>{{ project.name }}  ({{ project.advisor }} ) ({{ project.email }} ) ({{ project.stage }} )
+    </li>-->
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+
+{% endblock %}
