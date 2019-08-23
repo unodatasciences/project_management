@@ -65,6 +65,7 @@
         <th>Project ID</th>
         <th>Project Name</th>
         <th>Student Assistant Name</th>
+        <!--<th>advisor</th>-->
         <th>Stage</th>
         <th>Action</th>
         <!--<th>Action</th>-->
@@ -75,6 +76,7 @@
         <td>{{ project.id}}</td>
         <td>{{ project.name}}</td>
         <td>{{ project.student_name }}</td>
+        <!--<td>{{ project.advisor }}</td>-->
         <td>{{ project.stage }}</td>
         <td><a href="{% url 'professor_access:detail' project.id %}">Details</a>
         <!--<td><a href="{% url 'professor_access:files'  %}">Upload</a></td>-->

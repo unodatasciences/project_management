@@ -14,6 +14,7 @@ def current_date():
 class Project(models.Model):
     name = models.CharField(max_length=50 )
     student_name = models.CharField(max_length=200)
+    advisor = models.CharField (max_length=200)
     stage = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     note = models.TextField(blank=True)

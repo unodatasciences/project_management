@@ -52,11 +52,12 @@
 		<div class="prj_name">{{project.name}}</div>
 		<span class="input"><input type="text" name="name" value="{{project.name}}"></span>
 	</p>
-	<p>
-		<div class="professor_name">{{project.advisor}} </div>
-		<span class="input"><input type="text" name="advisor" value="{{project.advisor}}"></span>
-	</p>
 
+
+	<div class="professor_name">
+		<br /><span>{{project.advisor}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="advisor" value="{{project.advisor}}"></span>
+	</div>
 
 	<!--<p>
 		Date:
@@ -85,19 +86,20 @@
 	</p>
 
 </form>
-<div class="back_button"><a href="{% url 'professor_access:sa_list' %}">Back to Home</a></div>
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--<script>
+<script>
 	$('.edit').click(function(){
 		$(this).parent().parent().find('.text').hide()
 		$(this).parent().parent().find('.input').show()
 		$('.submit').show()
 	})
-</script>-->
+
+</script>
 </div>
+
 {% endblock %}
 </body>
 </html>
