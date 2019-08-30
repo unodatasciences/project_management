@@ -9,6 +9,7 @@ from . import views
 app_name = 'professor_access'
 
 urlpatterns = [
+  path ('accounts/', include ('django.contrib.auth.urls')),
   path ('', views.professor_list, name='pa_list'),
   path ('1', views.student_list, name='sa_list'),
   path ('new', views.professor_create, name='project_new'),
@@ -20,7 +21,6 @@ urlpatterns = [
   path ('upload/<str:filename>', views.upload, name='upload'),
   #path ('mdeditor', include ('mdeditor.urls'))
   #path ('ckeditor/', include('ckeditor_uploader.urls'))
-
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

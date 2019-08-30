@@ -2,7 +2,13 @@ import os
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.forms import ModelForm
 
+
 from professor_access.models import Project
+from .forms import LoginForm
+from django.contrib.auth.decorators import login_required
+
+from django.contrib.admin.views.decorators import staff_member_required
+
 
 
 class professorForm(ModelForm):
@@ -10,12 +16,14 @@ class professorForm(ModelForm):
         model = Project
         fields = ['id','name', 'student_name', 'stage']
 
+@staff_member_required
 def professor_list(request, template_name='professor_access/pa_list.html'):
     project = Project.objects.all()
     data = {}
     data['object_list'] = project
     return render(request, template_name, data)
 
+@login_required
 def student_list(request, template_name='professor_access/sa_list.html'):
     project =Project.objects.all()
     data = {}
@@ -108,5 +116,31 @@ def upload(request, filename):
     path = os.path.join('upload', filename)
     return HttpResponse(open(path, 'rb').read())
 
+@login_required
+class studentForm(ModelForm):
+    class Meta:
+        model = Project
+        fields = ['id','name', 'advisor', 'stage']
 
+def student_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            user = authenticate(request,
+                                username=cd['username'],
+                                password=cd['password'])
+            if user:
+                login(request, user)
+                return redirect("professor_access:sa_list")
+            else:
+                return HttpResponse('Disabled account')
+        else:
+            return HttpResponse('Invalid login')
+    elif request.method == 'GET':
+        form = LoginForm ()
+        context = {'form': LoginForm}
+        return render (request, 'professor_access/login.html', context)
+    else:
+        return HttpResponse ("Use GET to requrest data")
 

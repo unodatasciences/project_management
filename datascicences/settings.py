@@ -67,7 +67,7 @@ CKEDITOR_UPLOAD_PATH = 'upload/'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,11 +131,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_URL = '/admin/login/'
+#LOGIN_URL = '/admin/login/'
 
-LOGIN_REDIRECT_URL = 'dashboard'
-LOGIN_URL = 'student_access:login'
-LOGOUT_URL = 'logout'
+#LOGIN_URL = 'student_access:login'
+#LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/'
 
 #TINYMCE_DEFAULT_CONFIG = {
 #    'theme': 'advanced',

@@ -5,6 +5,7 @@ from django.contrib import admin
 from workflow import views
 
 urlpatterns = [
+    path ('accounts/', include ('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('student_access/', include('student_access.urls', namespace='student_access')),
     #path('student_access/login/', include ('student_access.urls', namespace='login')),
