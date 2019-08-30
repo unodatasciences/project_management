@@ -8,7 +8,7 @@ from professor_access.models import Project
 class professorForm(ModelForm):
     class Meta:
         model = Project
-        fields = ['id','name', 'student_name', 'stage', 'file']
+        fields = ['id','name', 'student_name', 'stage']
 
 def professor_list(request, template_name='professor_access/pa_list.html'):
     project = Project.objects.all()
