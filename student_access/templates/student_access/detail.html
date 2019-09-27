@@ -64,13 +64,13 @@
 		<span class="input"><input type="text" name="date" value="{{project.date|date:'Y-m-d'}}"></span>-->
 	</p>
 	<p class="name">Introduction</p>
-		<span class="text">{{project.description|linebreaksbr}}</span>
+		<span class="text">{{project.description|safe}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="description">{{project.description}}</textarea></span>
 
 
 	<p>
 		<p class="name">Summary</p>
-		<span class="text">{{project.note|linebreaksbr}}</span>
+		<span class="text">{{project.note|safe}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="note">{{project.note}}</textarea></span>
 	</p>
 		<p class="name">

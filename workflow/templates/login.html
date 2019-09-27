@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+<head>
+    <title>UNO Math Department</title>
+
+</head>
+
+<body>
+{% block content %}
+<p id="log_des" style="text-align: center">Login to Website</p>
+<div class ="login">
+
+  <form method="post" style="text-align: center; width: 100%; margin: 20px">
+    {% csrf_token %}
+    <p>
+      Username: <input type="text" name="username">
+    </p>
+    <p>
+      Password: <input type="password" name="password">
+    </p>
+    <p>
+      <input type="submit" value="Sign In">
+    </p>
+  </form>
+</div>
+
+  <script>
+    {% if msg %}
+        alert('{{ msg }}')
+    {% endif %}
+  </script>
+
+{% endblock %}
+</body>
+</html>

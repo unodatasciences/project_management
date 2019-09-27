@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+<head>
+    <title>UNO Math Department</title>
+
+</head>
+
+<body>
+{% block content %}
+<p id="log_des" style="text-align: center">Register to Website</p>
+<div class ="login">
+
+  <form method="post" style="text-align: center; width: 100%; margin: 20px">
+    {% csrf_token %}
+    <p>
+      <span style="display: inline-block; width: 300px">Username: </span>
+      <input type="text" name="username">
+    </p>
+    <p>
+      <span style="display: inline-block; width: 300px">Role: </span>
+      <select name="role">
+        <option value="student">student</option>
+        <option value="professor">professor</option>
+        <option value="admin">admin</option>
+      </select>
+    </p>
+    <p class="professor_select">
+      <span style="display: inline-block; width: 300px">Professor（if you are a student）:</span>
+      <select name="professor_id">
+        {% for professor in professors %}
+          <option value="{{ professor.id }}">{{ professor.username }}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <p>
+      <span style="display: inline-block; width: 300px">Password: </span>
+      <input type="password" name="password1">
+    </p>
+    <p>
+      <span style="display: inline-block; width: 300px">Repeat Password: </span>
+      <input type="password" name="password2">
+    </p>
+    <p>
+      <input type="submit" value="Sign Up">
+    </p>
+  </form>
+</div>
+
+  <script>
+    {% if msg %}
+        alert('{{ msg }}')
+    {% endif %}
+  </script>
+
+{% endblock %}
+</body>
+</html>

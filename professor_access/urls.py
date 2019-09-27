@@ -9,12 +9,11 @@ from . import views
 app_name = 'professor_access'
 
 urlpatterns = [
-  path ('accounts/', include ('django.contrib.auth.urls')),
   path ('', views.professor_list, name='pa_list'),
   path ('1', views.student_list, name='sa_list'),
   path ('new', views.professor_create, name='project_new'),
   path ('edit/<int:pk>', views.professor_update, name='project_edit'),
-  path ('projects', views.projects, name='projects'),
+  # path ('projects', views.projects, name='projects'),
   path ('detail/<int:pk>', views.detail, name='detail'),
   path ('detail2/<int:pk>', views.detail2, name='detail2'),
   path ('files', views.files, name='files'),

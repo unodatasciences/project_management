@@ -69,7 +69,9 @@
     {% for project in object_list %}
 
     <tr>
-        <td>{{ project.project_id }}</td>
+        <!--<td>{{ project.project_id }}</td>-->
+        <td>{{ project.id }}</td>
+        <td>{{ project.user }}</td>
         <td>{{ project.name }}</td>
         <td>{{ project.permission }}</td>
         <td>{{ project.budget }}</td>

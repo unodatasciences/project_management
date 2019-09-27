@@ -1,0 +1,7 @@
+#python3
+django
+django-mdeditor
+django-tinymce
+django-ckeditor
+
+

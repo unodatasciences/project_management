@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<head>
+     <title>Manage Projects</title>
+    <style>
+        .hello{
+            font-size:20px;
+            width:1030px;
+            margin: 10px auto;
+        }
+
+        .edit_content{
+            width:1030px;
+            margin: left;
+            /*border:2px solid black;
+            border-spacing:0px;*/
+            border-collapse: collapse;
+            font-size:16px;
+            line-height: 35px;
+            margin: 30px auto;
+            text-indent:10px;
+        }
+
+        /*.button{
+            margin: 30px auto;
+            text-indent:10px;
+        }*/
+    </style>
+</head>
+
+<body>
+
+<p class="hello">Welcome to the Project Management System, there are some information about your project.</p>
+
+<div class="edit_content">
+<h2><a href="{% url 'professor_access:pa_list' %}">Manage Projects</a>: Edit</h2>
+<form method="post">
+    {% csrf_token %}
+    <p><label for="id_name">Name:</label> <input type="text" name="name" maxlength="50" required id="id_name"></p>
+    <p><label for="id_stage">Stage:</label> <input type="text" name="stage" maxlength="50" required id="id_stage"></p>
+    <p>
+      <label for="id_student_name">Student:</label>
+      <select name="student_name">
+        {% for student in students %}
+          <option value="{{ student.username }}">{{ student.username }}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <div class="button"><input type="submit" value="Submit" /></div>
+</form>
+</div>
+</body>
+{% endblock %}

@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
@@ -7,14 +8,15 @@ from django.utils import timezone
 #from ckeditor_uploader.fields import RichTextUploadingField
 
 
-
 def current_date():
     return timezone.localdate()
 
+
 class Project(models.Model):
-    name = models.CharField(max_length=50 )
+    user = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
     student_name = models.CharField(max_length=200)
-    advisor = models.CharField (max_length=200)
+    advisor = models.CharField(max_length=200)
     stage = models.CharField(max_length=50)
     description = models.CharField(max_length=5000)
     note = models.CharField(max_length=5000)

@@ -12,13 +12,19 @@
 <div class ="login">
     <div class="login1">﻿
         <img class="img" src="/static/images/student.png"/><br /><br />
-        <a href="{% url 'professor_access:sa_list' %}">Login - Student Assistant</a></div><br /><br />
+        <a href="{% url 'professor_access:sa_list' %}">
+            Login - Student Assistant
+        </a>
+    </div><br /><br />
     <div class="login1"><a href="{% url 'professor_access:pa_list' %}">
         <img class="img" src="/static/images/advisor.png" /><br /><br />
-            Login - Advisor</a></div><br />
+            Login - Advisor</a>
+    </div><br />
     <div class="login1">
         <img class="img" src="/static/images/admin.png"/><br /><br />
-        <a href="http://127.0.0.1:8000/admin/">Login - Admin</a><br /></div>
+        <a href="http://127.0.0.1:8000/admin/">Login - Admin
+        </a><br />
+    </div>
 </div>
 
 {% endblock %}

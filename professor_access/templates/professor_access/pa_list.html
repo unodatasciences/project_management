@@ -57,7 +57,11 @@
 
 <body>
 
-<p class="hello1">Welcome to the Project Management System, there are some information about your projects.</p>
+<p class="hello1">
+  Welcome to the Project Management System, there are some information about your projects.</br>
+
+<a href="{% url 'professor_access:project_new' %}">New Project</a>
+</p>
 <!--<h3>Project Information</h3>-->
 
 <table class="table">
@@ -86,7 +90,6 @@
     </tbody>
 </table><br /><br />
 
-<!--<a href="{% url 'professor_access:project_new' %}">New</a>-->
 </body>
 
 {% endblock %}
