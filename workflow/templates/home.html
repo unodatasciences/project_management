@@ -8,22 +8,25 @@
 
 <body>
 {% block content %}
-<p id="log_des">Welcome to the Project Management System, please choose from below options to login.</p>
+  <p id="log_des">Welcome to the Project Management System, please choose from below options to <a href="/login/">login</a> or <a href="/register/">register</a>.</p>
 <div class ="login">
     <div class="login1">﻿
+      <a href="{% url 'student_access:sa_list' %}">
         <img class="img" src="/static/images/student.png"/><br /><br />
-        <a href="{% url 'professor_access:sa_list' %}">
-            Login - Student Assistant
-        </a>
-    </div><br /><br />
-    <div class="login1"><a href="{% url 'professor_access:pa_list' %}">
-        <img class="img" src="/static/images/advisor.png" /><br /><br />
-            Login - Advisor</a>
-    </div><br />
+        Login - Student Assistant
+      </a>
+    </div>
     <div class="login1">
+      <a href="{% url 'professor_access:pa_list' %}">
+        <img class="img" src="/static/images/advisor.png" /><br /><br />
+        Login - Advisor
+      </a>
+    </div>
+    <div class="login1">
+      <a href="{% url 'admin_access:aa_list' %}">
         <img class="img" src="/static/images/admin.png"/><br /><br />
-        <a href="http://127.0.0.1:8000/admin/">Login - Admin
-        </a><br />
+        Login - Admin
+      </a>
     </div>
 </div>
 

@@ -154,3 +154,4 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': 600,
     'height': 400,
 }
+DATABASE_URL='sqlite:////home/unodatasciences/path/to/db.sqlite'

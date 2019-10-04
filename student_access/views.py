@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from professor_access.models import Project
 from workflow.models import get_role
 from .forms import LoginForm
-from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.decorators import user_passes_test
 
 
 def student_required(function):
@@ -53,11 +53,9 @@ class studentForm(ModelForm):
         fields = ['id','name', 'advisor', 'stage']
 
 
-@login_required
+@student_required
 def student_list(request, template_name='student_access/sa_list.html'):
-    professor = request.user.profile.professor
-    project = Project.objects.filter(user=professor)
-    #project = Project.objects.filter(user=professor, student_name=request.user.name)
+    project = Project.objects.filter(users=request.user)
     data = {}
     data['object_list'] = project
     return render(request, template_name, data)
@@ -68,12 +66,10 @@ def detail(request, pk, template_name='student_access/detail.html'):
     project = get_object_or_404(Project, pk=pk)
     if request.method == 'POST':
         name = request.POST['name']
-        advisor = request.POST['advisor']
         stage = request.POST['stage']
         description = request.POST['description']
         note = request.POST['note']
         project.name = name
-        project.instructor = advisor
         project.stage = stage
         project.description = description
         project.note = note
@@ -81,3 +77,4 @@ def detail(request, pk, template_name='student_access/detail.html'):
         return redirect('student_access:sa_list')
 
     return render(request, template_name, locals())
+

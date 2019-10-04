@@ -3,7 +3,6 @@ from django.db import models
 
 
 class UserProfile (models.Model):
-
     ROLE_CHOICES = (
         ('student', 'student'),
         ('professor', 'professor'),
@@ -12,7 +11,6 @@ class UserProfile (models.Model):
 
     user = models.OneToOneField (User, blank=True, null=True, on_delete=models.CASCADE, related_name='profile')
     role = models.CharField (max_length=20, choices=ROLE_CHOICES, default='student')
-    professor = models.ForeignKey (User, blank=True, null=True, on_delete=models.CASCADE, related_name='student_set')
 
     def __str__(self):
         return f'{self.user}_{self.role}'

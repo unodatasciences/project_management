@@ -41,36 +41,39 @@
 </header>
 <body>
 <div class="content_s">
-<div class="back_button"><a href="{% url 'professor_access:sa_list' %}">Back to Home</a></div>
+<div class="back_button"><a href="{% url 'student_access:sa_list' %}">Back to Home</a></div>
 
 <form method="post">{% csrf_token %}
-	
-	<!--<p>
-		Project ID: {{project.id}}
-	</p>-->
+
 	<p>
 		<div class="prj_name">{{project.name}}</div>
 		<span class="input"><input type="text" name="name" value="{{project.name}}"></span>
 	</p>
-	<p>
-		<div class="professor_name">{{project.advisor}} </div>
-		<span class="input"><input type="text" name="advisor" value="{{project.advisor}}"></span>
-	</p>
 
+	<div class="professors">
+		Professors:
+    {% for professor in project.professors %}
+      {% if forloop.counter != 1 %},{% endif %}
+      {{ professor.username }}
+    {% endfor %}
+	</div>
 
-	<!--<p>
-		Date:
-		<span class="text">{{project.date|date:'m-d-Y'}} <button type="button" class="edit">edit</button></span>
-		<span class="input"><input type="text" name="date" value="{{project.date|date:'Y-m-d'}}"></span>-->
-	</p>
+	<div class="students">
+		Students:
+    {% for student in project.students %}
+      {% if forloop.counter != 1 %},{% endif %}
+      {{ student.username }}
+    {% endfor %}
+	</div>
+
 	<p class="name">Introduction</p>
-		<span class="text">{{project.description|safe}}</span>
+		<span class="text">{{project.description|safe|linebreaksbr}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="description">{{project.description}}</textarea></span>
 
 
 	<p>
 		<p class="name">Summary</p>
-		<span class="text">{{project.note|safe}}</span>
+		<span class="text">{{project.note|safe|linebreaksbr}}</span>
 		<span class="input"><textarea cols="40" rows="5" name="note">{{project.note}}</textarea></span>
 	</p>
 		<p class="name">
