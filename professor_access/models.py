@@ -16,7 +16,7 @@ def current_date():
 
 class Project (models.Model):
     users = models.ManyToManyField (User, blank=True, null=True)
-    name = models.CharField (max_length=50)
+    name = models.CharField (max_length=200)
     advisor = models.CharField (max_length=200)
     student_name = models.CharField (max_length=200)
     stage = models.CharField (max_length=50)

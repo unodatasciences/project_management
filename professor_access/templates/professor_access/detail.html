@@ -18,7 +18,7 @@
 	}
 	.prj_name{
 		text-align:center;
-		font-size:25px;
+		font-size:30px;
 		font-weight:bold;
 	}
 	.student_name{
@@ -65,6 +65,7 @@
 		<br /><span>{{project.student_name}} <button type="button" class="edit">edit</button></span>
 		<span class="input"><input type="text" name="student_name" value="{{project.student_name}}"></span>
 	</div>
+	<hr />
 	
 	<!--<p>
 		Email:
@@ -78,17 +79,20 @@
 		<span class="input"><input type="text" name="date" value="{{project.date|date:'Y-m-d'}}"></span>
 	</p>-->
 	<div class="name">
-		<p>Introduction<button type="button" class="edit">edit</button></p>
+		Introduction<button type="button" class="edit">edit</button>
+	</div>
 		<div class="text">{{project.description|safe}}</div>
 		<div class="input">
 			<input type="hidden" name="description" id="description">
 			<div id ="editor1">{{project.description|safe}}</input></div>
 		</div>
-	</div>
+
 <!--{% autoescape off %}-->
 
 
-	<div class="name">Summary<button type="button" class="edit">edit</button></div>
+	<div class="name">
+		Summary<button type="button" class="edit">edit</button>
+	</div>
 		<div class="text">{{project.note|safe}}</div>
 		<div class="input">
 			<input type="hidden" name="note" id="note">
