@@ -37,6 +37,16 @@
 		font-size:18px;
 		font-weight:bold;
 	}
+
+	.student_name{
+		text-align:center;
+		font-size:18px;
+	}
+	.advisor_assistant{
+		font-size:20;
+		font-weight:bold;
+
+	}
 </style>
 </header>
 <body>
@@ -50,16 +60,16 @@
 		<span class="input"><input type="text" name="name" value="{{project.name}}"></span>
 	</p>
 
-	<div class="professors">
-		Professors:
+	<div class="student_name">
+		<span class="advisor_assistant">Professors: </span>
     {% for professor in project.professors %}
       {% if forloop.counter != 1 %},{% endif %}
       {{ professor.username }}
     {% endfor %}
 	</div>
 
-	<div class="students">
-		Students:
+	<div class="student_name">
+		<span class="advisor_assistant">Students: </span>
     {% for student in project.students %}
       {% if forloop.counter != 1 %},{% endif %}
       {{ student.username }}
