@@ -48,6 +48,10 @@
 	.ql-container{
 		height: 50vh;
 	}
+	.advisor_assistant{
+		font-size:20;
+		font-weight:bold;
+	}
 </style>
 
 <div class="detail_content">
@@ -64,8 +68,18 @@
 		<span >{{project.name}}</span>
 		<span class="input"><input type="text" name="name" value="{{project.name}}"></span><br />
 	</div>
-	<div class="student_name">
+	<!--<div class="student_name">
 		<br /><span>{{project.student_name}} <button type="button" class="edit">edit</button></span>
+		<span class="input"><input type="text" name="student_name" value="{{project.student_name}}"></span>
+	</div>-->
+	<div class="student_name">
+		<br /><span class="advisor_assistant">Advisor: </span>
+				<span>{{ project.advisor }}</span>
+		<span class="input"><input type="text" name="student_name" value="{{project.student_name}}"></span>
+	</div>
+	<div class="student_name">
+		<br /><span class="advisor_assistant">Student Assistant: </span>
+		<span>{{project.student_name}}</span>
 		<span class="input"><input type="text" name="student_name" value="{{project.student_name}}"></span>
 	</div>
 	<hr />
