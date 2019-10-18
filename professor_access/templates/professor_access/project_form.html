@@ -35,18 +35,22 @@
 <p class="hello">Welcome to the Project Management System, there are some information about your project.</p>
 
 <div class="edit_content">
-<h2><a href="{% url 'professor_access:pa_list' %}">Manage Projects</a>: Edit</h2>
+<h2><a href="{% url 'professor_access:pa_list' %}">Manage Projects</a>: NEW</h2>
 <form method="post">
     {% csrf_token %}
     <p><label for="id_name">Name:</label> <input type="text" name="name" maxlength="50" required id="id_name"></p>
     <p><label for="id_stage">Stage:</label> <input type="text" name="stage" maxlength="50" required id="id_stage"></p>
     <p>
-      <label for="id_student_name">Student:</label>
-      <select name="student_name">
-        {% for student in students %}
-          <option value="{{ student.username }}">{{ student.username }}</option>
-        {% endfor %}
-      </select>
+      <label for="id_student_name">Professors:</label>
+      {% for professor in professors %}
+        <input type="checkbox" name="professor_ids" value="{{ professor.id }}">{{ professor.username }}
+      {% endfor %}
+    </p>
+    <p>
+      <label for="id_student_name">Students:</label>
+      {% for student in students %}
+        <input type="checkbox" name="student_ids" value="{{ student.id }}">{{ student.username }}
+      {% endfor %}
     </p>
     <div class="button"><input type="submit" value="Submit" /></div>
 </form>

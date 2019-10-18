@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4249d1f8-52cb-4338-be98-165658320296" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student_access/templates/student_access/detail.html" afterPath="$PROJECT_DIR$/student_access/templates/student_access/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/professor_access/templates/professor_access/project_form.html" afterPath="$PROJECT_DIR$/professor_access/templates/professor_access/project_form.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +24,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student_access/templates/student_access/detail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="274">
               <caret line="84" column="25" lean-forward="false" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project_form.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/professor_access/templates/professor_access/project_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="611">
+              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -66,7 +76,6 @@
         <option value="$PROJECT_DIR$/account/views.py" />
         <option value="$PROJECT_DIR$/student_access/forms.py" />
         <option value="$PROJECT_DIR$/student_access/templates/student_access/dashboard.html" />
-        <option value="$PROJECT_DIR$/professor_access/templates/professor_access/project_form.html" />
         <option value="$PROJECT_DIR$/professor_access/templates/professor_access/project_list.html" />
         <option value="$PROJECT_DIR$/professor_access/templates/professor_access/project_form copy.html" />
         <option value="$PROJECT_DIR$/student_access/templates/registration/login.html" />
@@ -112,6 +121,7 @@
         <option value="$PROJECT_DIR$/professor_access/views.py" />
         <option value="$PROJECT_DIR$/professor_access/templates/professor_access/detail.html" />
         <option value="$PROJECT_DIR$/student_access/templates/student_access/detail.html" />
+        <option value="$PROJECT_DIR$/professor_access/templates/professor_access/project_form.html" />
       </list>
     </option>
   </component>
@@ -388,13 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/professor_access/templates/professor_access/project_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-469">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student_access/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -651,6 +654,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="84" column="25" lean-forward="false" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/professor_access/templates/professor_access/project_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>
