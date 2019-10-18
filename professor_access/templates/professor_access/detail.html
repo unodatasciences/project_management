@@ -75,12 +75,12 @@
 	<div class="student_name">
 		<br /><span class="advisor_assistant">Advisor: </span>
 				<span>{{ project.advisor }}</span>
-		<span class="input"><input type="text" name="student_name" value="{{project.student_name}}"></span>
+		<!--<span class="input"><input type="text" name="student_name" value="{{project.student_name}}"></span>-->
 	</div>
 	<div class="student_name">
 		<br /><span class="advisor_assistant">Student Assistant: </span>
 		<span>{{project.student_name}}</span>
-		<span class="input"><input type="text" name="student_name" value="{{project.student_name}}"></span>
+		<!--<span class="input"><input type="text" name="student_name" value="{{project.student_name}}"></span>-->
 	</div>
 	<hr />
 	
@@ -96,7 +96,7 @@
 		<span class="input"><input type="text" name="date" value="{{project.date|date:'Y-m-d'}}"></span>
 	</p>-->
 	<div class="name">
-		Introduction<button type="button" class="edit">edit</button>
+		Content<button type="button" class="edit">edit</button>
 	</div>
 		<div class="text">{{project.description|safe}}</div>
 		<div class="input">
@@ -108,7 +108,7 @@
 
 
 	<div class="name">
-		Summary<button type="button" class="edit">edit</button>
+		<!--Summary<button type="button" class="edit">edit</button>-->
 	</div>
 		<div class="text">{{project.note|safe}}</div>
 		<div class="input">
