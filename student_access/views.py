@@ -67,11 +67,11 @@ def detail(request, pk, template_name='student_access/detail.html'):
     if request.method == 'POST':
         name = request.POST['name']
         stage = request.POST['stage']
-        description = request.POST['description']
+        #description = request.POST['description']
         note = request.POST['note']
         project.name = name
         project.stage = stage
-        project.description = description
+        #project.description = description
         project.note = note
         project.save()
         return redirect('student_access:sa_list')
