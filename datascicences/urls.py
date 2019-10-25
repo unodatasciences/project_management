@@ -13,6 +13,7 @@ urlpatterns = [
     path('admin_access/', include('admin_access.urls', namespace='admin_access')),
     path('', views.home),
     path('login/', views.login),
+    path ('logout/', views.login),
     path('register/', views.register),
 
 ]
