@@ -5,7 +5,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/professor_access/templates/professor_access/detail.html" afterPath="$PROJECT_DIR$/professor_access/templates/professor_access/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/professor_access/templates/professor_access/pa_list.html" afterPath="$PROJECT_DIR$/professor_access/templates/professor_access/pa_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student_access/templates/student_access/detail.html" afterPath="$PROJECT_DIR$/student_access/templates/student_access/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student_access/templates/student_access/sa_list.html" afterPath="$PROJECT_DIR$/student_access/templates/student_access/sa_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workflow/templates/base.html" afterPath="$PROJECT_DIR$/workflow/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workflow/templates/home.html" afterPath="$PROJECT_DIR$/workflow/templates/home.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,65 +23,39 @@
       <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/professor_access/templates/professor_access/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+            <state relative-caret-position="217">
+              <caret line="94" column="55" lean-forward="true" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pa_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/professor_access/templates/professor_access/pa_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="96" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student_access/templates/student_access/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+            <state relative-caret-position="183">
+              <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="91" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project_form.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/professor_access/templates/professor_access/project_form.html">
+      <file leaf-file-name="sa_list.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/student_access/templates/student_access/sa_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="335">
+              <caret line="87" column="10" lean-forward="false" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/professor_access/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="60" column="4" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/professor_access/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1115">
-              <caret line="68" column="8" lean-forward="true" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student_access/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="982">
-              <caret line="74" column="8" lean-forward="false" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#64#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -135,25 +113,25 @@
         <option value="$PROJECT_DIR$/admin_access/templates/admin_access/aa_list.html" />
         <option value="$PROJECT_DIR$/datascicences/settings.py" />
         <option value="$PROJECT_DIR$/professor_access/urls.py" />
-        <option value="$PROJECT_DIR$/student_access/templates/student_access/sa_list.html" />
         <option value="$PROJECT_DIR$/workflow/models.py" />
         <option value="$PROJECT_DIR$/workflow/views.py" />
         <option value="$PROJECT_DIR$/admin_access/views.py" />
-        <option value="$PROJECT_DIR$/workflow/templates/home.html" />
-        <option value="$PROJECT_DIR$/workflow/templates/base.html" />
-        <option value="$PROJECT_DIR$/professor_access/templates/professor_access/pa_list.html" />
         <option value="$PROJECT_DIR$/professor_access/models.py" />
         <option value="$PROJECT_DIR$/professor_access/templates/professor_access/project_form.html" />
         <option value="$PROJECT_DIR$/student_access/views.py" />
         <option value="$PROJECT_DIR$/professor_access/views.py" />
+        <option value="$PROJECT_DIR$/workflow/templates/base.html" />
+        <option value="$PROJECT_DIR$/workflow/templates/home.html" />
+        <option value="$PROJECT_DIR$/professor_access/templates/professor_access/pa_list.html" />
         <option value="$PROJECT_DIR$/professor_access/templates/professor_access/detail.html" />
         <option value="$PROJECT_DIR$/student_access/templates/student_access/detail.html" />
+        <option value="$PROJECT_DIR$/student_access/templates/student_access/sa_list.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-20" />
-    <option name="y" value="147" />
+    <option name="x" value="-31" />
+    <option name="y" value="173" />
     <option name="width" value="1440" />
     <option name="height" value="770" />
   </component>
@@ -180,11 +158,6 @@
             <path>
               <item name="project_management" type="b2602c69:ProjectViewProjectNode" />
               <item name="project_management" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project_management" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project_management" type="462c0819:PsiDirectoryNode" />
-              <item name="datascicences" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="project_management" type="b2602c69:ProjectViewProjectNode" />
@@ -226,6 +199,12 @@
               <item name="project_management" type="b2602c69:ProjectViewProjectNode" />
               <item name="project_management" type="462c0819:PsiDirectoryNode" />
               <item name="workflow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project_management" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project_management" type="462c0819:PsiDirectoryNode" />
+              <item name="workflow" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -270,7 +249,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-20" y="147" width="1440" height="770" extended-state="0" />
+    <frame x="-31" y="173" width="1440" height="770" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4427754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -440,20 +419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workflow/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-146">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workflow/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-129">
-          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/workflow/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -532,13 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student_access/templates/student_access/sa_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/workflow/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -564,30 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workflow/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="19" column="52" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workflow/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="140" column="27" lean-forward="false" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/professor_access/templates/professor_access/pa_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="82" column="37" lean-forward="true" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -680,18 +614,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/workflow/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workflow/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workflow/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/professor_access/templates/professor_access/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        <state relative-caret-position="217">
+          <caret line="94" column="55" lean-forward="true" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workflow/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/professor_access/templates/professor_access/pa_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="96" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/student_access/templates/student_access/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        <state relative-caret-position="183">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="91" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student_access/templates/student_access/sa_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="87" column="10" lean-forward="false" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
           <folding />
         </state>
       </provider>
