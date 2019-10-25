@@ -92,12 +92,13 @@
 </style>
 
     <div class="box1"><a class= "title" href="/professor_access/" >Project Management System</a>
-		        <div id = ""><a href="/logout/">Logout</a></div>
+
         <div id="subtitle1"><a href="/professor_access/">UNO Math Data Consulting Lab</a></div>
     </div>
 <div class="detail_content">
-<div class="return_home"><a href="{% url 'professor_access:pa_list' %}">Back to Home</a></div>
-
+	<!--<div class="return_home"><a href="{% url 'professor_access:pa_list' %}">Back to Home</a></div>-->
+	<div class="return_home"><a href="/logout/">Logout</a>
+	</div>
 <form method="post" id="form">
 {% csrf_token %}
 <!--{{ form.media }}
@@ -149,7 +150,7 @@
 
 
 	<div class="name">
-		Content<!--Summary<button type="button" class="edit">edit</button>-->
+		Content<button type="button" class="edit">edit</button>
 	</div>
 		<div class="text">{{project.note|safe}}</div>
 		<div class="input">
