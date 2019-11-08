@@ -9,10 +9,10 @@
 <body>
 
 <div>{% block content %}
-  <p id="log_des">Welcome to the Project Management System, please choose from below options to login.</a></p>
-  <!--<p id="log_des">Welcome to the Project Management System, please choose from below options to <a href="/login/">login</a> or <a href="/register/">register</a>.</p>-->
+  <!--<p id="log_des">Welcome to the Project Management System, please choose from below options to login.</a></p>-->
+  <p id="log_des">Welcome to the Project Management System, please <a href="/login/">login</a> or <a href="/register/">Register</a> your account.</p>
 
-    <div class ="login">
+    <!--<div class ="login">
     <div class="login1">﻿
       <a href="{% url 'student_access:sa_list' %}">
         <img class="img" src="/static/images/student.png"/><br /><br />
@@ -31,7 +31,7 @@
         Login - Admin
       </a>
     </div>
-</div>
+</div>-->
 
 {% endblock %}
 </div>

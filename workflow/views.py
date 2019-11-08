@@ -12,7 +12,6 @@ def home(request):
             UserProfile.objects.create (user=user)
     return render (request, "home.html")
 
-
 def login(request):
     if request.method == 'POST':
         username = request.POST.get ('username')
