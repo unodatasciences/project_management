@@ -1,59 +1,55 @@
 {% extends "base.html" %}
-{% load staticfiles %}
 
 {% block content %}
+<title>New Project</title>
 <head>
-     <title>Manage Projects</title>
     <style>
-        .hello{
+        .content{
+            width:1030px;
+            height:300px;
+            border-color:#eee;
+            border-style:none;
+            margin:30px auto;
+            padding:30px 15px;
+        }
+        .new_proj{
+            font-size:28px;
+            font-weight:bold;
+		    text-align:center;
+
+        }
+        .content1{
+            font-size:18px;
+		    text-align:left;
+        }
+        .hello1{
             font-size:20px;
             width:1030px;
             margin: 10px auto;
-        }
 
-        .edit_content{
-            width:1030px;
-            margin: left;
-            /*border:2px solid black;
-            border-spacing:0px;*/
-            border-collapse: collapse;
-            font-size:16px;
-            line-height: 35px;
-            margin: 30px auto;
-            text-indent:10px;
-        }
+        .back_home{
+		    background-color:red;
+		    font-size:18px;
 
-        /*.button{
-            margin: 30px auto;
-            text-indent:10px;
-        }*/
+	}
     </style>
+
 </head>
+<div class="content">
+<p class="hello2">
+  Welcome to the Project Management System, you would create a new project here.</br>
+</p>
+<div class="new_proj">New Project</div>
+    <div class="back_home">
+        <a href="{% url 'professor_access:pa_list' %}">Back to Home</a></div>
 
-<body>
+    <div class="content1">
+    <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+    </form>
+    </div>
 
-<p class="hello">Welcome to the Project Management System, there are some information about your project.</p>
-
-<div class="edit_content">
-<h2><a href="{% url 'professor_access:pa_list' %}">Manage Projects</a>: NEW</h2>
-<form method="post">
-    {% csrf_token %}
-    <p><label for="id_name">Name:</label> <input type="text" name="name" maxlength="50" required id="id_name"></p>
-    <p><label for="id_stage">Stage:</label> <input type="text" name="stage" maxlength="50" required id="id_stage"></p>
-    <p>
-      <label for="id_student_name">Professors:</label>
-      {% for professor in professors %}
-        <input type="checkbox" name="professor_ids" value="{{ professor.id }}">{{ professor.username }}
-      {% endfor %}
-    </p>
-    <p>
-      <label for="id_student_name">Students:</label>
-      {% for student in students %}
-        <input type="checkbox" name="student_ids" value="{{ student.id }}">{{ student.username }}
-      {% endfor %}
-    </p>
-    <div class="button"><input type="submit" value="Submit" /></div>
-</form>
 </div>
-</body>
+
 {% endblock %}

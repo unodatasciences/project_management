@@ -8,43 +8,48 @@
 
 <body>
 {% block content %}
-<p id="log_des" style="text-align: center">Register to Website</p>
+<div class="box_register"><p id="log_des" style="text-align: center">Register to the Website</p>
 <div class ="login">
 
   <form method="post" style="text-align: center; width: 100%; margin: 20px">
     {% csrf_token %}
     <p>
-      <span style="display: inline-block; width: 300px">Username: </span>
-      <input type="text" name="username">
+      <span style="display: inline-block; width: 300px">Username
+      <input type="text" name="username"> </span>
     </p>
     <p>
-      <span style="display: inline-block; width: 300px">Role: </span>
+      <span style="display: inline-block; width: 300px">Role
       <select name="role">
         <option value="student">student</option>
         <option value="professor">professor</option>
         <option value="admin">admin</option>
-      </select>
+      </select></span>
     </p>
     <p class="professor_select">
-      <span style="display: inline-block; width: 300px">Professor（if you are a student）:</span>
+      <span style="display: inline-block; width: 300px">Professor（if you are a student）
       <select name="professor_id">
         {% for professor in professors %}
           <option value="{{ professor.id }}">{{ professor.username }}</option>
         {% endfor %}
-      </select>
+      </select></span>
     </p>
     <p>
-      <span style="display: inline-block; width: 300px">Password: </span>
+      <span style="display: inline-block; width: 300px">Password
       <input type="password" name="password1">
+    </span>
     </p>
+
     <p>
-      <span style="display: inline-block; width: 300px">Repeat Password: </span>
-      <input type="password" name="password2">
+      <span>Repeat Password
+      <input type="password" name="password2"></span>
+
     </p>
+
     <p>
       <input type="submit" value="Sign Up">
     </p>
   </form>
+</div>
 </div>
 
   <script>

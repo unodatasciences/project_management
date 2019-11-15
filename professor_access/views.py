@@ -21,7 +21,9 @@ def professor_required(function):
 class professorForm (ModelForm):
     class Meta:
         model = Project
-        fields = ['id', 'name', 'stage']
+        #fields = ['id', 'name', 'stage']
+
+        fields = ['id', 'name', 'student_name','stage']
 
 
 @professor_required
@@ -40,17 +42,17 @@ def professor_create(request, template_name='professor_access/project_form.html'
     if form.is_valid ():
         project = form.save ()
 
-        student_ids = request.POST.getlist ('student_ids')
+        student_ids = request.POST.getlist('student_ids')
         for student_id in student_ids:
             student = User.objects.get (id=student_id)
             project.users.add (student)
 
-        professor_ids = request.POST.getlist ('professor_ids')
+        professor_ids = request.POST.getlist('professor_ids')
         for professor_id in professor_ids:
-            professor = User.objects.get (id=professor_id)
-            project.users.add (professor)
+            professor = User.objects.get(id=professor_id)
+            project.users.add(professor)
 
-        project.users.add (request.user)
+        project.users.add(request.user)
 
         project.user = request.user
         project.advisor = request.user.username
