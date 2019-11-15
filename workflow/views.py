@@ -32,8 +32,8 @@ def register(request):
         username = request.POST.get ('username')
         password1 = request.POST.get ('password1')
         password2 = request.POST.get ('password2')
-        role = request.POST.get ('role')
-        professor_id = request.POST.get ('professor_id')
+        #role = request.POST.get ('role')
+        #professor_id = request.POST.get ('professor_id')
         if password1 != password2:
             msg = 'Two password not match'
         elif User.objects.filter (username=username).exists ():
@@ -43,9 +43,9 @@ def register(request):
             u.set_password (password1)
             u.save ()
             profile = UserProfile.objects.create (user=u)
-            profile.role = role
-            if role == 'student':
-                profile.professor_id = professor_id
+         #   profile.role = role
+         #   if role == 'student':
+         #       profile.professor_id = professor_id
             profile.save ()
             return HttpResponseRedirect ('/login/')
 

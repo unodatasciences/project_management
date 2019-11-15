@@ -17,7 +17,7 @@
       <span style="display: inline-block; width: 300px">Username
       <input type="text" name="username"> </span>
     </p>
-    <p>
+    <!--<p>
       <span style="display: inline-block; width: 300px">Role
       <select name="role">
         <option value="student">student</option>
@@ -32,7 +32,7 @@
           <option value="{{ professor.id }}">{{ professor.username }}</option>
         {% endfor %}
       </select></span>
-    </p>
+    </p>-->
     <p>
       <span style="display: inline-block; width: 300px">Password
       <input type="password" name="password1">
@@ -46,7 +46,9 @@
     </p>
 
     <p>
-      <input type="submit" value="Sign Up">
+	<div class="submit">
+		<input class="submit" type="submit" value="Sign Up">
+	</div>
     </p>
   </form>
 </div>
