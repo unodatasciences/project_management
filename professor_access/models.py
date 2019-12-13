@@ -19,6 +19,7 @@ class Project (models.Model):
     name = models.CharField (max_length=200)
     advisor = models.CharField (max_length=200)
     student_name = models.CharField (max_length=200)
+    #student_email = models.EmailField(blank=True, unique=True)
     stage = models.CharField (max_length=50)
     description = models.CharField (max_length=5000)
     note = models.CharField (max_length=5000)

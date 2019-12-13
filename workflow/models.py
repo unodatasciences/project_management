@@ -15,7 +15,6 @@ class UserProfile (models.Model):
     def __str__(self):
         return f'{self.user}_{self.role}'
 
-
 def get_role(user):
     if hasattr (user, 'profile'):
         return user.profile.role

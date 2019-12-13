@@ -8,13 +8,17 @@
 
 <body>
 {% block content %}
-<div class="box_register"><p id="log_des" style="text-align: center">Register to the Website</p>
+<div class="box_register"><p id="log_des1" style="text-align: center">Create an account </p>
 <div class ="login">
-
   <form method="post" style="text-align: center; width: 100%; margin: 20px">
     {% csrf_token %}
+      <p style="text-align: center">Please, sign up using the following form:</p>
     <p>
-      <span style="display: inline-block; width: 300px">Username
+      <span style="display: inline-block; width: 300px">Username:
+      <input type="text" name="username"> </span>
+    </p>
+     <p>
+      <span style="display: inline-block; width: 300px">Email:
       <input type="text" name="username"> </span>
     </p>
     <!--<p>
@@ -34,20 +38,20 @@
       </select></span>
     </p>-->
     <p>
-      <span style="display: inline-block; width: 300px">Password
+      <span style="display: inline-block; width: 300px">Password:
       <input type="password" name="password1">
     </span>
     </p>
 
     <p>
-      <span>Repeat Password
+      <span>Repeat Password:
       <input type="password" name="password2"></span>
 
     </p>
 
     <p>
 	<div class="submit">
-		<input class="submit" type="submit" value="Sign Up">
+		<input class="submit" type="submit" value="CREATE MY ACCOUNT">
 	</div>
     </p>
   </form>

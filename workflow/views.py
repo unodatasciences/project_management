@@ -5,6 +5,7 @@ from django.shortcuts import render
 
 from workflow.models import UserProfile
 
+from .forms import UserRegistrationForm
 
 def home(request):
     for user in User.objects.all ():
@@ -32,6 +33,8 @@ def register(request):
         username = request.POST.get ('username')
         password1 = request.POST.get ('password1')
         password2 = request.POST.get ('password2')
+
+
         #role = request.POST.get ('role')
         #professor_id = request.POST.get ('professor_id')
         if password1 != password2:

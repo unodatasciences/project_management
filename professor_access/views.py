@@ -24,6 +24,8 @@ class professorForm (ModelForm):
         #fields = ['id', 'name', 'stage']
 
         fields = ['id', 'name', 'student_name','stage']
+        #fields = ['id', 'name', 'student_name','student_email','stage']
+
 
 
 @professor_required
