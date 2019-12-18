@@ -26,10 +26,13 @@
             font-size:20px;
             width:1030px;
             margin: 10px auto;
-
-        .back_home{
-		    background-color:red;
+        }
+	    .return_home{
+		    /*display:none;*/
+		    text-align:right;
 		    font-size:18px;
+	        }
+
 
 	}
     </style>
@@ -40,8 +43,6 @@
   Welcome to the Project Management System, you would create a new project here.</br>
 </p>
 <div class="new_proj">New Project</div>
-    <div class="back_home">
-        <a href="{% url 'professor_access:pa_list' %}">Back to Home</a></div>
 
     <div class="content1">
     <form method="post">{% csrf_token %}
@@ -50,6 +51,9 @@
     </form>
     </div>
 
+    <div class="return_home">
+        <a href="{% url 'professor_access:pa_list' %}">Back to Home</a>
+    </div>
 </div>
 
 {% endblock %}
